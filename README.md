@@ -2,6 +2,20 @@
 
 Static bilingual website for Yeon Studio by Rebecca, deployed with GitHub Pages.
 
+## Private preview gate
+
+The deployed site currently uses a lightweight client-side password gate. Successful access is remembered in `sessionStorage`, so the password is requested again in a new browser session.
+
+This is appropriate for review-stage access control, but it is not server-side security: a determined visitor can still inspect static source files.
+
+The password is stored only as a SHA-256 hash in `index.html`. To change it, generate a new hash and replace the `expectedHash` value:
+
+```sh
+printf '%s' 'new-password' | shasum -a 256
+```
+
+When the site is approved for public launch, remove the preview-lock markup and scripts, remove the corresponding rules from `styles.css`, and restore the robots setting in `index.html` to `index, follow`.
+
 ## Contact form setup
 
 The form is ready for Formspree but intentionally uses a placeholder endpoint. To connect it:

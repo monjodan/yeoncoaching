@@ -1,23 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="site-locked">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yeon Studio by Rebecca | Embodied Global Confidence</title>
 <meta name="description" content="Bilingual coaching for embodied confidence across cultures, guided by Rebecca and the Five Senses Method.">
 <meta name="theme-color" content="#483438">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow, noarchive">
 <link rel="canonical" href="https://monjodan.github.io/yeoncoaching/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Yeon Studio by Rebecca">
 <meta property="og:description" content="Feel at home in yourself, so you can feel at home anywhere.">
 <meta property="og:url" content="https://monjodan.github.io/yeoncoaching/">
 <meta property="og:image" content="https://monjodan.github.io/yeoncoaching/assets/photos/rebecca-3.jpeg">
+<script>
+  (() => {
+    try {
+      if (window.sessionStorage.getItem('yeon.preview.unlocked') === 'true') {
+        document.documentElement.classList.replace('site-locked', 'site-unlocked');
+      }
+    } catch (error) {}
+  })();
+</script>
 <link rel="icon" href="./assets/logos/mark-doyou.svg" type="image/svg+xml">
 <link rel="stylesheet" href="./styles.css">
 <script src="./support.js"></script>
 </head>
 <body>
+<main id="preview-lock" class="preview-lock" aria-labelledby="preview-lock-title">
+  <div class="preview-lock__card">
+    <img class="preview-lock__logo" src="assets/logos/lockup-doyou.svg" alt="Yeon Studio by Rebecca">
+    <div class="preview-lock__eyebrow">Private preview</div>
+    <h1 id="preview-lock-title">Client review in progress.</h1>
+    <p>This website is not public yet. Enter the preview password to continue.</p>
+    <form id="preview-lock-form" class="preview-lock__form">
+      <label for="preview-password">Password</label>
+      <div class="preview-lock__controls">
+        <input id="preview-password" name="preview-password" type="password" autocomplete="current-password" required autofocus>
+        <button type="submit">Enter preview</button>
+      </div>
+      <p id="preview-lock-status" class="preview-lock__status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</main>
+<script>
+  (() => {
+    const expectedHash = '4ab5602a0d5a068a24540141a042bf0d6c08c3fbd2d0d1bd5ca33cc620c9bf5e';
+    const form = document.getElementById('preview-lock-form');
+    const input = document.getElementById('preview-password');
+    const status = document.getElementById('preview-lock-status');
+    const button = form.querySelector('button');
+
+    const digest = async (value) => {
+      const bytes = new TextEncoder().encode(value);
+      const buffer = await window.crypto.subtle.digest('SHA-256', bytes);
+      return Array.from(new Uint8Array(buffer), (byte) => byte.toString(16).padStart(2, '0')).join('');
+    };
+
+    const unlock = () => {
+      try {
+        window.sessionStorage.setItem('yeon.preview.unlocked', 'true');
+      } catch (error) {}
+      document.documentElement.classList.replace('site-locked', 'site-unlocked');
+      window.scrollTo(0, 0);
+      window.setTimeout(() => document.getElementById('top')?.focus(), 0);
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      button.disabled = true;
+      status.textContent = 'Checking password…';
+      input.removeAttribute('aria-invalid');
+
+      try {
+        if (await digest(input.value) === expectedHash) {
+          unlock();
+          return;
+        }
+        status.textContent = 'That password is not correct. Please try again.';
+        input.value = '';
+        input.setAttribute('aria-invalid', 'true');
+        input.focus();
+      } catch (error) {
+        status.textContent = 'The password could not be checked. Please refresh and try again.';
+      } finally {
+        button.disabled = false;
+      }
+    });
+  })();
+</script>
 <x-dc>
 <helmet>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -107,7 +178,7 @@
   </header>
 
   <!-- ===================== HERO ===================== -->
-  <section id="top" data-screen-label="Hero" style="position:relative;overflow:hidden;background:#483438">
+  <section id="top" tabindex="-1" data-screen-label="Hero" style="position:relative;overflow:hidden;background:#483438">
     <div class="hero-media" style="position:absolute;top:0;right:0;bottom:0;width:54%;pointer-events:none">
       <img src="assets/photos/rebecca-3.jpeg" alt="Rebecca in a coaching workshop" style="width:100%;height:100%;object-fit:cover;object-position:52% 30%;display:block">
       <div style="position:absolute;inset:0;background:linear-gradient(90deg,#483438 0%,rgba(72,52,56,0.62) 32%,rgba(72,52,56,0.08) 72%),linear-gradient(0deg,rgba(72,52,56,0.6) 0%,rgba(72,52,56,0) 34%)"></div>
