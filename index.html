@@ -42,7 +42,7 @@
   }
 </style>
 <link rel="icon" href="./assets/logos/mark-doyou.svg" type="image/svg+xml">
-<link rel="stylesheet" href="./styles.css?v=line-logo-1">
+<link rel="stylesheet" href="./styles.css?v=testimonials-1">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -132,7 +132,7 @@
       <div style="background:linear-gradient(180deg,rgba(35,22,26,0.38) 0%,rgba(35,22,26,0) 100%)">
         <div class="nav-inner" style="max-width:1160px;margin:0 auto;padding:0 32px;height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px">
           <a href="#top" style="display:flex;align-items:center;text-decoration:none">
-            <img class="nav-logo" src="assets/logos/line-white.svg" alt="Yeon Studio" style="width:176px;height:auto;display:block">
+            <img class="nav-logo" src="assets/logos/line-white.svg" alt="Yeon Studio" style="width:150px;height:auto;display:block">
           </a>
         <nav class="site-nav" aria-label="Primary navigation" style="display:flex;align-items:center;gap:28px">
           <a href="#story" style="text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#EFE6DF">
@@ -165,7 +165,7 @@
       <div style="background:rgba(251,248,245,0.96);backdrop-filter:blur(10px);border-bottom:1px solid #E8E0D7">
         <div class="nav-inner" style="max-width:1160px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px">
           <a href="#top" style="display:flex;align-items:center;text-decoration:none">
-            <img class="nav-logo" src="assets/logos/line-primary.svg" alt="Yeon Studio" style="width:176px;height:auto;display:block">
+            <img class="nav-logo" src="assets/logos/line-primary.svg" alt="Yeon Studio" style="width:150px;height:auto;display:block">
           </a>
         <nav class="site-nav" aria-label="Primary navigation" style="display:flex;align-items:center;gap:28px">
           <a href="#story" style="text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#483438">
@@ -523,45 +523,126 @@
 
   <!-- ===================== TESTIMONIALS ===================== -->
   <sc-if value="{{ showTestimonials }}" hint-placeholder-val="{{ true }}">
-    <section data-screen-label="Testimonials" style="background:#F3EDE7">
-      <div style="max-width:1160px;margin:0 auto;padding:96px 32px;display:flex;flex-direction:column;gap:44px">
-        <div style="font-size:12px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:#8A7A7F;text-align:center">
-          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>What people say</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>참여자들의 이야기</span></sc-if>
+    <section id="testimonials" class="testimonial-section" data-screen-label="Testimonials">
+      <div class="testimonial-shell">
+        <div class="testimonial-heading">
+          <div class="testimonial-heading__eyebrow">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Real outcomes</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>실제 변화</span></sc-if>
+          </div>
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+            <h2>Confidence that moves into the real world.</h2>
+            <p>From interviews and startup pitches to global careers and life-changing decisions, these are the moments students carried beyond the coaching room.</p>
+          </sc-if>
+          <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+            <h2>현실의 변화로 이어지는 자신감.</h2>
+            <p>인터뷰와 스타트업 피칭부터 글로벌 커리어와 삶을 바꾸는 선택까지, 코칭룸 밖에서 실제로 이어진 참여자들의 변화입니다.</p>
+          </sc-if>
         </div>
-        <div class="testimonial-grid" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px">
-          <div style="display:flex;flex-direction:column;gap:16px">
-            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
-              <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.6;color:#483438">“Her idea to spend a full month to re-brand my LinkedIn, resume, and cover letter led me to all of a sudden get 4 job offers in one week.”</p>
-            </sc-if>
-            <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
-              <p style="margin:0;font-family:'Gowun Batang',serif;font-size:15.5px;line-height:1.8;color:#483438">“링크드인, 이력서, 커버레터를 한 달 동안 리브랜딩하자는 그녀의 제안 덕분에, 갑자기 일주일 만에 네 곳에서 잡오퍼를 받았습니다.”</p>
-            </sc-if>
-            <div style="font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:#8D8177">
-              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Ethan Willick, early-career consultant</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>이든 윌릭, 주니어 컨설턴트</span></sc-if>
-            </div>
+
+        <div class="testimonial-proof-grid" aria-label="Selected student outcomes">
+          <div class="testimonial-proof">
+            <div class="testimonial-proof__value">4</div>
+            <div class="testimonial-proof__label"><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>job offers after five sessions</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>5회 세션 후 받은 잡오퍼</span></sc-if></div>
           </div>
-          <div style="display:flex;flex-direction:column;gap:16px">
-            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
-              <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.6;color:#483438">“Rebecca’s session felt very frank and honest in a way that most tutoring and coaching I had before wasn’t. It felt like I was talking to a human and a friend.”</p>
-            </sc-if>
-            <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
-              <p style="margin:0;font-family:'Gowun Batang',serif;font-size:15.5px;line-height:1.8;color:#483438">“레베카의 세션은 이전에 받아본 어떤 튜터링이나 코칭보다 솔직하고 진실했습니다. 사람과, 친구와 이야기하는 느낌이었어요.”</p>
-            </sc-if>
-            <div style="font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:#8D8177">
-              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Chaeyeon Kim, recent graduate</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>김채연, 최근 졸업생</span></sc-if>
-            </div>
+          <div class="testimonial-proof">
+            <div class="testimonial-proof__value"><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>1st</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>첫</span></sc-if></div>
+            <div class="testimonial-proof__label"><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>interview became a job offer</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>첫 인터뷰가 합격으로</span></sc-if></div>
           </div>
-          <div style="display:flex;flex-direction:column;gap:16px">
-            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
-              <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.6;color:#483438">“When I faced a wave of internship rejections, my regular check-ins with Rebecca kept me grounded. I was able to maintain a resilient mindset and keep moving forward.”</p>
-            </sc-if>
-            <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
-              <p style="margin:0;font-family:'Gowun Batang',serif;font-size:15.5px;line-height:1.8;color:#483438">“인턴십 불합격이 쏟아지던 시기, 레베카와의 정기적인 체크인이 저를 붙들어 주었습니다. 단단한 마음을 지키며 계속 나아갈 수 있었어요.”</p>
-            </sc-if>
-            <div style="font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:#8D8177">
-              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Dain Kim, university student in the US</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>김다인, 미국 대학 재학생</span></sc-if>
-            </div>
+          <div class="testimonial-proof">
+            <div class="testimonial-proof__value"><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>90 min</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>90분</span></sc-if></div>
+            <div class="testimonial-proof__label"><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>conversation from a 30-minute interview</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>30분 인터뷰가 이어진 시간</span></sc-if></div>
           </div>
+          <div class="testimonial-proof">
+            <div class="testimonial-proof__value"><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Dream role</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>꿈의 기회</span></sc-if></div>
+            <div class="testimonial-proof__label"><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>landed after rebuilding confidence</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>자신감을 회복한 뒤 얻은 기회</span></sc-if></div>
+          </div>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <div class="testimonial-card__tag"><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Career direction</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>커리어 방향</span></sc-if></div>
+            <blockquote>
+              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><p>“By the end of my senior year, I felt confident going into my career at JPMorgan. Rebecca not only helped me speak better; she taught me to reflect and become a better person.”</p></sc-if>
+              <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><p class="testimonial-card__quote--kr">“대학 4학년을 마칠 무렵에는 JPMorgan에서 커리어를 시작할 자신감이 생겼습니다. 레베카는 더 잘 말하도록 도왔을 뿐 아니라, 더 깊이 돌아보고 더 나은 사람이 되도록 이끌어 주었습니다.”</p></sc-if>
+            </blockquote>
+            <footer><strong>Katerina Folkin</strong><span><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">University student in the USA</sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">미국 대학 재학생</sc-if></span></footer>
+          </article>
+
+          <article class="testimonial-card testimonial-card--accent">
+            <div class="testimonial-card__tag"><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Four job offers</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>네 곳의 잡오퍼</span></sc-if></div>
+            <blockquote>
+              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><p>“I was unemployed and couldn’t decide where to live or what to do with my life. By the end of five sessions with Rebecca, I had four job offers, clear goals, and a plan for work–life balance.”</p></sc-if>
+              <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><p class="testimonial-card__quote--kr">“직장이 없었고 어디에서 살지, 어떤 일을 할지 정하지 못한 상태였습니다. 레베카와 다섯 번의 세션을 마쳤을 때 네 곳에서 잡오퍼를 받았고, 분명한 목표와 일과 삶의 균형을 위한 계획도 생겼습니다.”</p></sc-if>
+            </blockquote>
+            <footer><strong>Ethan Willick</strong><span><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">Early-career consultant</sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">주니어 컨설턴트</sc-if></span></footer>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__tag"><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Interview confidence</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>인터뷰 자신감</span></sc-if></div>
+            <blockquote>
+              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><p>“The interview was scheduled for 30 minutes, but we ended up talking for an hour and a half. At the end, I got the job. Without Rebecca, I don’t think I would have landed that internship.”</p></sc-if>
+              <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><p class="testimonial-card__quote--kr">“30분 예정이던 인터뷰가 한 시간 반 동안 이어졌고, 마지막에는 합격했습니다. 레베카가 없었다면 이 인턴십을 얻지 못했을 거라 진심으로 생각합니다.”</p></sc-if>
+            </blockquote>
+            <footer><strong>Chaeyeon Kim</strong><span><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">Recent university graduate</sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">최근 대학 졸업생</sc-if></span></footer>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__tag"><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Resilience</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>회복탄력성</span></sc-if></div>
+            <blockquote>
+              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><p>“When I faced a wave of internship rejections, regular check-ins with Rebecca kept me grounded. I carried myself with confidence and ultimately landed my dream internship.”</p></sc-if>
+              <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><p class="testimonial-card__quote--kr">“인턴십 불합격이 이어지던 시기, 레베카와의 정기적인 체크인이 저를 단단히 붙들어 주었습니다. 자신감 있게 임했고, 결국 꿈꾸던 인턴십을 얻었습니다.”</p></sc-if>
+            </blockquote>
+            <footer><strong>Dain Kim</strong><span><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">University student in the US</sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">미국 대학 재학생</sc-if></span></footer>
+          </article>
+
+          <article class="testimonial-card testimonial-card--accent">
+            <div class="testimonial-card__tag"><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>From Brazil to Google</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>브라질에서 Google까지</span></sc-if></div>
+            <blockquote>
+              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><p>“Rebecca gave me confidence alongside an actionable plan, so things felt tangible. I landed a role at a bank in Brazil, then at Google in the US.”</p></sc-if>
+              <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><p class="testimonial-card__quote--kr">“레베카는 제 자신에 대한 믿음과 함께 실행 가능한 계획을 주었고, 그래서 모든 것이 현실적으로 느껴졌습니다. 브라질의 은행에서 첫 기회를 얻은 뒤, 미국 Google에서도 일하게 되었습니다.”</p></sc-if>
+            </blockquote>
+            <footer><strong><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">Anonymous</sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">익명</sc-if></strong><span><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">Brazilian student at a global university</sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">글로벌 대학의 브라질 학생</sc-if></span></footer>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__tag"><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Tailored guidance</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>맞춤형 가이드</span></sc-if></div>
+            <blockquote>
+              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><p>“Other career advice can feel generic. These sessions were tailored to my aspirations and personality. The feedback was practical, constructive, and helped me navigate my career path with clear guidance.”</p></sc-if>
+              <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><p class="testimonial-card__quote--kr">“다른 커리어 조언은 일반적으로 느껴질 때가 있지만, 이 세션은 제 목표와 성향에 맞춰져 있었습니다. 실용적이고 구체적인 피드백 덕분에 분명한 방향을 가지고 커리어를 탐색할 수 있었습니다.”</p></sc-if>
+            </blockquote>
+            <footer><strong>Melody Que</strong><span><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">Early-career tech professional</sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">글로벌 기업의 주니어 테크 인재</sc-if></span></footer>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__tag"><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Grounded communication</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>단단한 커뮤니케이션</span></sc-if></div>
+            <blockquote>
+              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><p>“I no longer feel awkward or hesitant approaching someone new. I’m calmer, more grounded, and more intentional in how I communicate. Rebecca never gives generic advice; everything is specific to me.”</p></sc-if>
+              <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><p class="testimonial-card__quote--kr">“새로운 사람에게 다가갈 때 더 이상 어색하거나 망설이지 않습니다. 더 차분하고 단단해졌으며, 의도적으로 소통하게 되었습니다. 레베카의 조언은 언제나 제 상황에 구체적으로 맞춰져 있습니다.”</p></sc-if>
+            </blockquote>
+            <footer><strong>Aidana Mustafina</strong><span><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">Product manager, recent graduate</sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">프로덕트 매니저, 최근 졸업생</sc-if></span></footer>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__tag"><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Self-trust</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>자기 신뢰</span></sc-if></div>
+            <blockquote>
+              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><p>“I was lost. I didn’t know my skills, my values, or the job market. Now I feel much more confident making decisions and capable of always seeking to be at my best.”</p></sc-if>
+              <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><p class="testimonial-card__quote--kr">“저는 길을 잃은 상태였습니다. 제 역량도, 가치관도, 채용 시장도 알지 못했습니다. 이제는 훨씬 자신 있게 결정을 내리고, 언제든 최선의 방향을 찾아갈 수 있다고 느낍니다.”</p></sc-if>
+            </blockquote>
+            <footer><strong>Mariana Janotti</strong><span><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">Founding team member, global startup</sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">글로벌 스타트업 창립 멤버</sc-if></span></footer>
+          </article>
+
+          <article class="testimonial-card testimonial-card--accent">
+            <div class="testimonial-card__tag"><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Networking in practice</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>실전 네트워킹</span></sc-if></div>
+            <blockquote>
+              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><p>“After practicing my pitch, I connected with multiple people in the room and later had a coffee chat with someone at the label. I have felt more confident about my abilities ever since.”</p></sc-if>
+              <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><p class="testimonial-card__quote--kr">“피치를 연습한 뒤 현장에서 여러 사람과 연결되었고, 이후 레이블 관계자와 커피챗도 가졌습니다. 그때부터 제 역량에 대해 훨씬 더 자신감을 갖게 되었습니다.”</p></sc-if>
+            </blockquote>
+            <footer><strong><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">Anonymous</sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">익명</sc-if></strong><span><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">University student in Seoul</sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">서울 소재 대학 재학생</sc-if></span></footer>
+          </article>
+        </div>
+
+        <div class="testimonial-note">
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Testimonials are excerpted and lightly edited for length and clarity.</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>후기는 길이와 명확성을 위해 일부 발췌·편집되었습니다.</span></sc-if>
         </div>
       </div>
     </section>
@@ -653,7 +734,7 @@
   <footer data-screen-label="Footer" style="background:#483438">
     <div style="max-width:1160px;margin:0 auto;padding:64px 32px 40px;display:flex;flex-direction:column;gap:40px">
       <div style="display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap">
-        <img class="footer-logo" src="assets/logos/line-white.svg" alt="Yeon Studio" style="width:214px;height:auto;display:block">
+        <img class="footer-logo" src="assets/logos/line-white.svg" alt="Yeon Studio" style="width:180px;height:auto;display:block">
         <div style="display:flex;align-items:center;gap:20px">
           <img src="assets/icons/white/sight-10.svg" alt="Sight" style="width:22px;height:22px;opacity:0.85">
           <img src="assets/icons/white/sound-09.svg" alt="Sound" style="width:22px;height:22px;opacity:0.85">

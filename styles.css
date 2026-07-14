@@ -42,7 +42,7 @@ html.site-locked body > #preview-lock {
 }
 
 .preview-lock__logo {
-  width: 214px;
+  width: 180px;
   height: auto;
   display: block;
   margin-bottom: 44px;
@@ -164,6 +164,174 @@ button[type="submit"]:hover {
   background: #35272b !important;
 }
 
+.testimonial-section {
+  background: #f3ede7;
+  scroll-margin-top: 72px;
+}
+
+.testimonial-shell {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 112px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+}
+
+.testimonial-heading {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonial-heading__eyebrow {
+  margin-bottom: 18px;
+  color: #8a7a7f;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+}
+
+.testimonial-heading h2 {
+  margin: 0;
+  color: #483438;
+  font-size: clamp(34px, 4vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.6px;
+}
+
+.testimonial-heading p {
+  max-width: 690px;
+  margin: 20px auto 0;
+  color: #6f6661;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.testimonial-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid #d8cec6;
+  border-bottom: 1px solid #d8cec6;
+}
+
+.testimonial-proof {
+  min-height: 148px;
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.testimonial-proof + .testimonial-proof {
+  border-left: 1px solid #d8cec6;
+}
+
+.testimonial-proof__value {
+  color: #483438;
+  font-family: "Cormorant Garamond", "Gowun Batang", serif;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.testimonial-proof__label {
+  max-width: 180px;
+  color: #7c706a;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 1.15px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.testimonial-card {
+  min-height: 330px;
+  padding: 30px 28px 26px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e2d9d1;
+  border-radius: 4px;
+  background: #fbf8f5;
+  box-shadow: 0 12px 34px rgba(72, 52, 56, 0.055);
+}
+
+.testimonial-card--accent {
+  background: #efe6df;
+}
+
+.testimonial-card__tag {
+  margin-bottom: 20px;
+  color: #9a6d62;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.55px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.testimonial-card blockquote {
+  margin: 0;
+  flex: 1;
+}
+
+.testimonial-card blockquote p {
+  margin: 0;
+  color: #483438;
+  font-family: "Cormorant Garamond", "Gowun Batang", serif;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.testimonial-card blockquote .testimonial-card__quote--kr {
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1.9;
+}
+
+.testimonial-card footer {
+  margin-top: 26px;
+  padding-top: 19px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-top: 1px solid #ded4cc;
+}
+
+.testimonial-card footer strong {
+  color: #483438;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.testimonial-card footer span {
+  color: #8d8177;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.testimonial-note {
+  color: #958981;
+  font-size: 10.5px;
+  line-height: 1.5;
+  text-align: center;
+}
+
 @media (max-width: 980px) {
   .site-nav {
     display: none !important;
@@ -184,6 +352,19 @@ button[type="submit"]:hover {
   .program-grid,
   .testimonial-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .testimonial-proof-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .testimonial-proof:nth-child(3) {
+    border-left: 0;
+    border-top: 1px solid #d8cec6;
+  }
+
+  .testimonial-proof:nth-child(4) {
+    border-top: 1px solid #d8cec6;
   }
 
   .format-grid {
@@ -219,7 +400,7 @@ button[type="submit"]:hover {
   }
 
   .nav-inner .nav-logo {
-    width: 146px !important;
+    width: 126px !important;
     height: auto !important;
   }
 
@@ -295,6 +476,32 @@ button[type="submit"]:hover {
 
   .program-grid > div {
     padding: 30px 26px !important;
+  }
+
+  .testimonial-shell {
+    gap: 40px;
+  }
+
+  .testimonial-heading h2 {
+    font-size: 34px;
+  }
+
+  .testimonial-heading p {
+    font-size: 15px;
+  }
+
+  .testimonial-proof {
+    min-height: 126px;
+    padding: 24px 14px;
+  }
+
+  .testimonial-proof__value {
+    font-size: 32px;
+  }
+
+  .testimonial-card {
+    min-height: 0;
+    padding: 28px 24px 24px;
   }
 
   .contact-grid > div:last-child {
