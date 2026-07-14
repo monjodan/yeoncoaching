@@ -1,5 +1,6 @@
 (() => {
   const trackSelector = ".testimonial-track";
+  const boundControls = new WeakSet();
 
   const prefersReducedMotion = () =>
     window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
@@ -64,8 +65,8 @@
     if (!carousel) return;
 
     carousel.querySelectorAll("[data-testimonial-direction]").forEach((button) => {
-      if (button.dataset.carouselControlReady === "true") return;
-      button.dataset.carouselControlReady = "true";
+      if (boundControls.has(button)) return;
+      boundControls.add(button);
       button.addEventListener("click", handleControlClick);
     });
   };
@@ -91,7 +92,7 @@
   document.addEventListener("click", (event) => {
     if (!(event.target instanceof Element)) return;
     const button = event.target.closest("[data-testimonial-direction]");
-    if (!button || button.disabled || button.dataset.carouselControlReady === "true") return;
+    if (!button || button.disabled || boundControls.has(button)) return;
 
     const track = button.closest(".testimonial-carousel")?.querySelector(trackSelector);
     if (!track) return;
