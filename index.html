@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yeon Studio by Rebecca | Embodied Global Confidence</title>
+<meta name="description" content="Bilingual coaching for embodied confidence across cultures, guided by Rebecca and the Five Senses Method.">
+<meta name="theme-color" content="#483438">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://monjodan.github.io/yeoncoaching/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yeon Studio by Rebecca">
+<meta property="og:description" content="Feel at home in yourself, so you can feel at home anywhere.">
+<meta property="og:url" content="https://monjodan.github.io/yeoncoaching/">
+<meta property="og:image" content="https://monjodan.github.io/yeoncoaching/assets/photos/rebecca-3.jpeg">
+<link rel="icon" href="./assets/logos/mark-doyou.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./styles.css">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Noto+Sans+KR:wght@400;500;700&amp;family=Gowun+Batang:wght@400;700&amp;display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #FBF8F5; }
+    a { color: #483438; }
+    a:hover { color: #6E4F58; }
+    ::selection { background: #483438; color: #FFFFFF; }
+    input, textarea, select, button { font-family: inherit; }
+    @keyframes ysBreathe { 0%, 100% { transform: scale(1); opacity: 0.75; } 50% { transform: scale(1.3); opacity: 1; } }
+  </style>
+</helmet>
+<div style="font-family:Montserrat,'Noto Sans KR',sans-serif;color:#4A4441;background:#FBF8F5;word-break:keep-all;-webkit-font-smoothing:antialiased">
+
+  <!-- ===================== NAV ===================== -->
+  <header data-screen-label="Navigation" style="position:fixed;top:0;left:0;right:0;z-index:50">
+    <sc-if value="{{ navTop }}" hint-placeholder-val="{{ true }}">
+      <div style="background:linear-gradient(180deg,rgba(35,22,26,0.38) 0%,rgba(35,22,26,0) 100%)">
+        <div class="nav-inner" style="max-width:1160px;margin:0 auto;padding:0 32px;height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+          <a href="#top" style="display:flex;align-items:center;text-decoration:none">
+            <img src="assets/logos/lockup-white.svg" alt="Yeon Studio by Rebecca" style="height:42px;display:block">
+          </a>
+        <nav class="site-nav" aria-label="Primary navigation" style="display:flex;align-items:center;gap:28px">
+          <a href="#story" style="text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#EFE6DF">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>About</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>소개</span></sc-if>
+          </a>
+          <a href="#method" style="text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#EFE6DF">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>The Method</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>오감 메소드</span></sc-if>
+          </a>
+          <a href="#programs" style="text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#EFE6DF">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Programs</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>프로그램</span></sc-if>
+          </a>
+          <a href="#contact" style="text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#EFE6DF">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Contact</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>문의</span></sc-if>
+          </a>
+        </nav>
+          <div style="display:flex;align-items:center;gap:24px">
+        <div style="display:flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:1px">
+          <button type="button" onClick="{{ setEn }}" aria-label="View in English" style="border:0;background:none;padding:0;font-size:inherit;font-weight:inherit;letter-spacing:inherit;cursor:pointer;color:{{ tEnColor }};transition:color .25s">EN</button>
+          <span style="color:rgba(255,255,255,0.35);font-weight:400">/</span>
+          <button type="button" onClick="{{ setKr }}" aria-label="한국어로 보기" style="border:0;background:none;padding:0;font-size:inherit;font-weight:inherit;letter-spacing:inherit;cursor:pointer;color:{{ tKrColor }};transition:color .25s">한국어</button>
+        </div>
+        <a class="nav-cta" href="#contact" style="text-decoration:none;background:#F3EDE7;color:#483438;padding:12px 22px;font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;border-radius:3px;transition:background .25s" style-hover="background:#FFFFFF">
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span style="color:#483438">Book an intro call</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="color:#483438">첫 상담 예약</span></sc-if>
+        </a>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ navScrolled }}" hint-placeholder-val="{{ false }}">
+      <div style="background:rgba(251,248,245,0.96);backdrop-filter:blur(10px);border-bottom:1px solid #E8E0D7">
+        <div class="nav-inner" style="max-width:1160px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+          <a href="#top" style="display:flex;align-items:center;text-decoration:none">
+            <img src="assets/logos/lockup-doyou.svg" alt="Yeon Studio by Rebecca" style="height:40px;display:block">
+          </a>
+        <nav class="site-nav" aria-label="Primary navigation" style="display:flex;align-items:center;gap:28px">
+          <a href="#story" style="text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#483438">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>About</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>소개</span></sc-if>
+          </a>
+          <a href="#method" style="text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#483438">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>The Method</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>오감 메소드</span></sc-if>
+          </a>
+          <a href="#programs" style="text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#483438">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Programs</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>프로그램</span></sc-if>
+          </a>
+          <a href="#contact" style="text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#483438">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Contact</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>문의</span></sc-if>
+          </a>
+        </nav>
+          <div style="display:flex;align-items:center;gap:24px">
+        <div style="display:flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:1px">
+          <button type="button" onClick="{{ setEn }}" aria-label="View in English" style="border:0;background:none;padding:0;font-size:inherit;font-weight:inherit;letter-spacing:inherit;cursor:pointer;color:{{ sEnColor }};transition:color .25s">EN</button>
+          <span style="color:#C9BCB0;font-weight:400">/</span>
+          <button type="button" onClick="{{ setKr }}" aria-label="한국어로 보기" style="border:0;background:none;padding:0;font-size:inherit;font-weight:inherit;letter-spacing:inherit;cursor:pointer;color:{{ sKrColor }};transition:color .25s">한국어</button>
+        </div>
+        <a class="nav-cta" href="#contact" style="text-decoration:none;background:#483438;color:#FFFFFF;padding:12px 22px;font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;border-radius:3px;transition:background .25s" style-hover="background:#35272B">
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span style="color:#FFFFFF">Book an intro call</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="color:#FFFFFF">첫 상담 예약</span></sc-if>
+        </a>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="top" data-screen-label="Hero" style="position:relative;overflow:hidden;background:#483438">
+    <div class="hero-media" style="position:absolute;top:0;right:0;bottom:0;width:54%;pointer-events:none">
+      <img src="assets/photos/rebecca-3.jpeg" alt="Rebecca in a coaching workshop" style="width:100%;height:100%;object-fit:cover;object-position:52% 30%;display:block">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,#483438 0%,rgba(72,52,56,0.62) 32%,rgba(72,52,56,0.08) 72%),linear-gradient(0deg,rgba(72,52,56,0.6) 0%,rgba(72,52,56,0) 34%)"></div>
+    </div>
+    <div class="hero-content" style="position:relative;max-width:1160px;margin:0 auto;padding:172px 32px 112px">
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:26px;max-width:600px">
+        <div style="font-size:12px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:rgba(255,255,255,0.62)">Yeon Studio by Rebecca · Embodied Global Confidence</div>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+          <h1 style="margin:0;font-size:clamp(42px,5.2vw,64px);line-height:1.08;font-weight:700;color:#FFFFFF;letter-spacing:-1px">Feel at home in yourself.<br><span style="font-family:'Cormorant Garamond','Gowun Batang',serif;font-weight:500;font-style:italic;letter-spacing:0;color:#EFE6DF">So you can feel at home anywhere.</span></h1>
+        </sc-if>
+        <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+          <h1 style="margin:0;font-size:clamp(38px,4.6vw,56px);line-height:1.22;font-weight:700;color:#FFFFFF">나 자신이 편안해질 때,<br><span style="font-family:'Gowun Batang','Cormorant Garamond',serif;font-weight:400;color:#EFE6DF">세상 어디서든 편안해집니다.</span></h1>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+          <p style="margin:0;max-width:520px;font-size:17px;line-height:1.7;color:rgba(255,255,255,0.88)">I help students and professionals build embodied confidence: the grounded ability to speak, move, connect, and make decisions across cultures. Not performed. Practiced.</p>
+        </sc-if>
+        <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:0;max-width:520px;font-size:16px;line-height:1.85;color:rgba(255,255,255,0.88)">학생과 직장인이 문화를 넘나들며 말하고, 움직이고, 연결되고, 결정할 수 있는 몸에 밴 자신감을 기르도록 돕습니다. 연기하는 자신감이 아니라, 연습으로 쌓은 자신감을요.</p>
+        </sc-if>
+        <div style="font-size:11.5px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,0.55)">
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>ICF ACC Certified Coach · Five Continents · English &amp; Korean</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>ICF ACC 국제공인코치 · 5개 대륙 · 영어 &amp; 한국어</span></sc-if>
+        </div>
+        <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap">
+          <a href="#contact" style="text-decoration:none;background:#F3EDE7;color:#483438;padding:16px 32px;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;border-radius:3px;transition:background .25s" style-hover="background:#FFFFFF">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span style="color:#483438">Book an intro call</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="color:#483438">첫 상담 예약</span></sc-if>
+          </a>
+          <a href="#method" style="text-decoration:none;font-size:13px;font-weight:600;letter-spacing:1px;color:#EFE6DF;border-bottom:1px solid rgba(255,255,255,0.4);padding-bottom:4px">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span style="color:#EFE6DF">Explore the Five Senses Method ↓</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="color:#EFE6DF">오감 메소드 살펴보기 ↓</span></sc-if>
+          </a>
+        </div>
+        <sc-if value="{{ showInkDots }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;align-items:center;gap:14px;margin-top:18px">
+            <span style="width:9px;height:9px;border-radius:50%;background:#235F9E;box-shadow:0 0 0 3px #235F9E3D;animation:ysBreathe 5s ease-in-out infinite"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#4C588B;box-shadow:0 0 0 3px #4C588B3D;animation:ysBreathe 5s ease-in-out .5s infinite"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#B63C26;box-shadow:0 0 0 3px #B63C263D;animation:ysBreathe 5s ease-in-out 1s infinite"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#035844;box-shadow:0 0 0 3px #0358443D;animation:ysBreathe 5s ease-in-out 1.5s infinite"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#62677A;box-shadow:0 0 0 3px #62677A3D;animation:ysBreathe 5s ease-in-out 2s infinite"></span>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STORY ===================== -->
+  <section id="story" data-screen-label="About Rebecca" style="background:#F3EDE7;scroll-margin-top:76px">
+    <div class="story-grid" style="max-width:1160px;margin:0 auto;padding:112px 32px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <img src="assets/photos/rebecca-3.jpeg" alt="Rebecca leading a cross-cultural coaching workshop" loading="lazy" decoding="async" style="width:100%;height:440px;object-fit:cover;object-position:58% 52%;display:block;border-radius:8px">
+        <div style="font-size:12px;color:#8D8177;letter-spacing:0.4px">
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Sixteen years, five continents, one method.</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>16년, 5개 대륙, 하나의 메소드.</span></sc-if>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:22px">
+        <div style="font-size:12px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:#8A7A7F">
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>My story</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>저의 이야기</span></sc-if>
+        </div>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+          <h2 style="margin:0;font-size:clamp(30px,3.4vw,40px);font-weight:700;color:#483438;letter-spacing:-0.5px">Hi, I’m Rebecca.</h2>
+        </sc-if>
+        <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+          <h2 style="margin:0;font-size:clamp(28px,3vw,36px);font-weight:700;color:#483438">안녕하세요, 레베카입니다.</h2>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;gap:16px;max-width:600px">
+            <p style="margin:0;font-size:15.5px;line-height:1.75;color:#4A4441">My career began in Singapore and brought me through Korea, Japan, Taiwan, the US, and Europe, always at the intersection of culture, communication, and how people show up.</p>
+            <p style="margin:0;font-size:15.5px;line-height:1.75;color:#4A4441">Some people I worked with were brilliant on paper but hesitant in person. Some were confident in one culture and unsure in another. Some knew exactly what they wanted to say, and felt their body shake before the words came.</p>
+            <p style="margin:0;font-size:15.5px;line-height:1.75;color:#4A4441">I saw bits of myself in them. And I understood something important: confidence is not a purely mental process. It begins in the body, in how we perceive and how we are perceived. That insight became the Five Senses Method.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:16px;max-width:600px">
+            <p style="margin:0;font-size:14.5px;line-height:1.9;color:#4A4441">싱가포르에서 시작된 저의 커리어는 한국, 일본, 대만, 미국, 유럽으로 이어졌습니다. 언제나 문화와 커뮤니케이션, 그리고 사람들이 자신을 드러내는 방식의 교차점에서 일해왔습니다.</p>
+            <p style="margin:0;font-size:14.5px;line-height:1.9;color:#4A4441">서류로는 뛰어나지만 사람 앞에서는 주저하는 이들이 있었습니다. 한 문화에서는 당당하다가 다른 문화에서는 흔들리는 이들도, 하고 싶은 말이 분명한데도 말이 나오기 전에 몸이 먼저 떨리는 이들도 있었습니다.</p>
+            <p style="margin:0;font-size:14.5px;line-height:1.9;color:#4A4441">그들 안에서 저 자신의 모습을 보았습니다. 그리고 중요한 사실을 깨달았습니다. 자신감은 순전히 머리의 일이 아니라는 것. 자신감은 몸에서, 우리가 지각하고 또 지각되는 방식에서 시작됩니다. 그 깨달음이 오감 메소드가 되었습니다.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+          <p style="margin:8px 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;line-height:1.5;color:#483438">“Confidence is not performed. It is practiced.”</p>
+        </sc-if>
+        <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:8px 0 0;font-family:'Gowun Batang',serif;font-size:18px;line-height:1.7;color:#483438">“자신감은 연기하는 것이 아니라, 연습하는 것입니다.”</p>
+        </sc-if>
+        <div style="margin-top:20px;display:flex;flex-direction:column;gap:14px">
+          <div style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#8A7A7F">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Credentials</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>주요 이력</span></sc-if>
+          </div>
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+            <div class="credentials-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:0 32px">
+              <div style="border-top:1px solid #DCD2C7;padding:12px 0;font-size:13.5px;color:#4A4441">ICF ACC Certified Coach</div>
+              <div style="border-top:1px solid #DCD2C7;padding:12px 0;font-size:13.5px;color:#4A4441">16 years in entertainment &amp; media</div>
+              <div style="border-top:1px solid #DCD2C7;padding:12px 0;font-size:13.5px;color:#4A4441">Contributions to Variety</div>
+              <div style="border-top:1px solid #DCD2C7;padding:12px 0;font-size:13.5px;color:#4A4441">Aperian GlobeSmart Profile certified</div>
+              <div style="border-top:1px solid #DCD2C7;padding:12px 0;font-size:13.5px;color:#4A4441">Intercultural Development Inventory (IDI)</div>
+              <div style="border-top:1px solid #DCD2C7;padding:12px 0;font-size:13.5px;color:#4A4441">Lived &amp; worked across five continents</div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+            <div class="credentials-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:0 32px">
+              <div style="border-top:1px solid #DCD2C7;padding:12px 0;font-size:13.5px;color:#4A4441">ICF ACC 국제공인코치</div>
+              <div style="border-top:1px solid #DCD2C7;padding:12px 0;font-size:13.5px;color:#4A4441">엔터테인먼트 · 미디어 16년 경력</div>
+              <div style="border-top:1px solid #DCD2C7;padding:12px 0;font-size:13.5px;color:#4A4441">Variety 기고</div>
+              <div style="border-top:1px solid #DCD2C7;padding:12px 0;font-size:13.5px;color:#4A4441">Aperian GlobeSmart Profile 인증</div>
+              <div style="border-top:1px solid #DCD2C7;padding:12px 0;font-size:13.5px;color:#4A4441">IDI 문화간발달검사 인증</div>
+              <div style="border-top:1px solid #DCD2C7;padding:12px 0;font-size:13.5px;color:#4A4441">5개 대륙에서 거주하고 일한 경험</div>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== QUOTE BAND ===================== -->
+  <section data-screen-label="Quote band" style="background:#483438">
+    <div style="max-width:880px;margin:0 auto;padding:84px 32px;text-align:center">
+      <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+        <p style="margin:0;font-family:'Cormorant Garamond','Gowun Batang',serif;font-style:italic;font-weight:500;font-size:clamp(24px,3vw,32px);line-height:1.5;color:#FFFFFF">“You cannot think yourself into confidence.<br>But you can practice your way into it.<br>Breath by breath, step by step, sense by sense.”</p>
+      </sc-if>
+      <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0;font-family:'Gowun Batang',serif;font-size:clamp(22px,2.6vw,28px);line-height:1.7;color:#FFFFFF">“생각만으로 자신감에 이를 수는 없습니다.<br>하지만 연습으로는 닿을 수 있습니다.<br>호흡 하나, 걸음 하나, 감각 하나씩.”</p>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- ===================== METHOD ===================== -->
+  <section id="method" data-screen-label="Five Senses Method" style="background:#FBF8F5;scroll-margin-top:76px">
+    <div style="max-width:1160px;margin:0 auto;padding:112px 32px 104px;display:flex;flex-direction:column;gap:56px">
+      <div style="display:flex;flex-direction:column;gap:20px;max-width:680px">
+        <div style="font-size:12px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:#8A7A7F">
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>The Method</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>메소드</span></sc-if>
+        </div>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+          <h2 style="margin:0;font-size:clamp(30px,3.4vw,40px);font-weight:700;color:#483438;letter-spacing:-0.5px">The Five Senses Method</h2>
+        </sc-if>
+        <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+          <h2 style="margin:0;font-size:clamp(28px,3vw,36px);font-weight:700;color:#483438">오감 메소드</h2>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+          <p style="margin:0;font-size:16px;line-height:1.75;color:#4A4441">Most coaching starts in the mind. Think deeper, speak louder, act steadier. This work starts earlier, with the senses. Before you speak a word, your breath, posture, and tone have already begun speaking for you.</p>
+        </sc-if>
+        <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:0;font-size:15px;line-height:1.9;color:#4A4441">대부분의 코칭은 머리에서 시작합니다. 더 깊이 생각하고, 더 크게 말하고, 더 침착하게 행동하라고요. 이 작업은 그보다 먼저, 감각에서 시작합니다. 말을 꺼내기 전에 호흡과 자세, 목소리가 이미 당신을 대신해 말하고 있으니까요.</p>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+          <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.6;color:#8A7A7F">Nothing abstract, nothing mystical. Five doors into the same room, each one a practical way to work on how you show up.</p>
+        </sc-if>
+        <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:0;font-family:'Gowun Batang',serif;font-size:16px;line-height:1.8;color:#8A7A7F">추상적이거나 신비로운 것이 아닙니다. 같은 방으로 통하는 다섯 개의 문이자, 당신이 드러나는 방식을 다듬는 다섯 가지 실용적인 연습입니다.</p>
+        </sc-if>
+      </div>
+
+      <div class="method-grid" style="display:grid;grid-template-columns:minmax(280px,5fr) minmax(0,7fr);gap:40px">
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ senses }}" as="s" hint-placeholder-count="5">
+            <div onClick="{{ s.select }}" style="display:flex;align-items:center;gap:18px;padding:20px 22px;cursor:pointer;border-top:1px solid #E8E0D7;border-left:3px solid {{ s.bar }};background:{{ s.bg }};transition:background .3s,border-color .3s">
+              <div style="width:32px;height:32px;flex-shrink:0;background-image:url({{ s.icon }});background-size:contain;background-repeat:no-repeat;background-position:center"></div>
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <div style="font-size:15px;font-weight:600;color:#483438;letter-spacing:0.3px">{{ s.name }}</div>
+                <div style="font-size:13px;color:#8D8177">{{ s.tag }}</div>
+              </div>
+            </div>
+          </sc-for>
+          <div style="border-top:1px solid #E8E0D7"></div>
+        </div>
+
+        <div style="background:{{ panelTint }};border-radius:10px;padding:40px 44px;box-sizing:border-box;display:flex;flex-direction:column;gap:22px;justify-content:center;transition:background .45s">
+          <div style="display:flex;align-items:center;gap:20px">
+            <div style="width:64px;height:64px;border-radius:8px;background:{{ sInk }};display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .45s">
+              <div style="width:36px;height:36px;background-image:url({{ sIconWhite }});background-size:contain;background-repeat:no-repeat;background-position:center"></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <div style="font-size:24px;font-weight:700;color:#483438">{{ sName }}</div>
+              <div style="font-size:12px;font-weight:500;letter-spacing:1.6px;text-transform:uppercase;color:#8D8177">{{ sInkName }}</div>
+            </div>
+          </div>
+          <p style="margin:0;font-family:'Cormorant Garamond','Gowun Batang',serif;font-style:italic;font-size:20px;line-height:1.55;color:{{ sInk }};transition:color .45s">{{ sPoetry }}</p>
+          <div style="height:1px;background:#48343822"></div>
+          <div class="sense-details" style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#8A7A7F">{{ lblPractice }}</div>
+              <p style="margin:0;font-size:14.5px;line-height:1.75;color:#4A4441">{{ sDesc }}</p>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#8A7A7F">{{ lblChanges }}</div>
+              <p style="margin:0;font-size:14.5px;line-height:1.75;color:#4A4441">{{ sOutcome }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="method-origin" style="display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:48px;align-items:center;border-top:1px solid #E8E0D7;padding-top:56px">
+        <img src="assets/photos/rebecca-1.jpeg" alt="Hand-drawn five senses map" loading="lazy" decoding="async" style="width:100%;height:320px;object-fit:cover;display:block;border-radius:8px">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+            <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;line-height:1.55;color:#483438">The method began on paper, with a five-senses map drawn by hand.</p>
+          </sc-if>
+          <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;font-family:'Gowun Batang',serif;font-size:19px;line-height:1.7;color:#483438">이 메소드는 종이 위에서, 손으로 그린 오감 지도로 시작되었습니다.</p>
+          </sc-if>
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+            <p style="margin:0;font-size:15px;line-height:1.75;color:#4A4441">The wheel has no beginning and no end. The five senses are not a hierarchy, and there is no test to pass. Every pathway moves through all five, at your pace, starting wherever you are.</p>
+          </sc-if>
+          <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;font-size:14.5px;line-height:1.9;color:#4A4441">이 원에는 시작도 끝도 없습니다. 다섯 감각 사이에 위계는 없고, 통과해야 할 시험도 없습니다. 모든 여정은 지금 당신이 있는 곳에서 출발해, 당신의 속도로 다섯 감각을 지나갑니다.</p>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROGRAMS ===================== -->
+  <section id="programs" data-screen-label="Programs" style="background:#FBF8F5;scroll-margin-top:76px">
+    <div style="max-width:1160px;margin:0 auto;padding:112px 32px;display:flex;flex-direction:column;gap:48px">
+      <div style="display:flex;flex-direction:column;gap:20px;max-width:640px">
+        <div style="font-size:12px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:#8A7A7F">
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Work Together</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>함께하기</span></sc-if>
+        </div>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+          <h2 style="margin:0;font-size:clamp(30px,3.4vw,40px);font-weight:700;color:#483438;letter-spacing:-0.5px">Ways to work together</h2>
+        </sc-if>
+        <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+          <h2 style="margin:0;font-size:clamp(28px,3vw,36px);font-weight:700;color:#483438">함께하는 방법</h2>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+          <p style="margin:0;font-size:16px;line-height:1.75;color:#4A4441">The same method, three ways in. Every pathway moves through the five senses. The depth and pace are shaped around you.</p>
+        </sc-if>
+        <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:0;font-size:15px;line-height:1.9;color:#4A4441">같은 메소드, 세 가지 길. 모든 과정은 다섯 감각을 지나며, 깊이와 속도는 당신에게 맞춰 설계됩니다.</p>
+        </sc-if>
+      </div>
+
+      <div class="program-grid" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px">
+        <div style="border:1px solid #E8E0D7;border-radius:10px;padding:36px 32px;display:flex;flex-direction:column;gap:14px;transition:border-color .3s" style-hover="border-color:#483438">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:#8A7A7F">01</div>
+          <div style="font-size:18px;font-weight:600;color:#483438">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Private coaching</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>개인 코칭</span></sc-if>
+          </div>
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+            <p style="margin:0;font-size:14.5px;line-height:1.75;color:#4A4441">A one-to-one pathway through the Five Senses Method: your story, your rooms, your next chapter. Online, or in person in Seoul.</p>
+          </sc-if>
+          <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;font-size:14px;line-height:1.85;color:#4A4441">당신의 이야기, 당신의 무대, 당신의 다음 챕터를 위한 1:1 오감 메소드 여정. 온라인 또는 서울에서 만납니다.</p>
+          </sc-if>
+          <div style="margin-top:auto;font-size:12.5px;color:#8D8177;line-height:1.6">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>For students, career changers, and young professionals.</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>학생, 커리어 전환자, 주니어 직장인에게 맞습니다.</span></sc-if>
+          </div>
+        </div>
+        <div style="border:1px solid #E8E0D7;border-radius:10px;padding:36px 32px;display:flex;flex-direction:column;gap:14px;transition:border-color .3s" style-hover="border-color:#483438">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:#8A7A7F">02</div>
+          <div style="font-size:18px;font-weight:600;color:#483438">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Universities &amp; students</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>대학 &amp; 학생 프로그램</span></sc-if>
+          </div>
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+            <p style="margin:0;font-size:14.5px;line-height:1.75;color:#4A4441">Workshops, campus series, and career-readiness sessions that prepare students for interviews, study abroad, and global roles.</p>
+          </sc-if>
+          <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;font-size:14px;line-height:1.85;color:#4A4441">면접, 유학, 글로벌 커리어를 준비하는 학생들을 위한 워크숍, 캠퍼스 시리즈, 취업 준비 세션.</p>
+          </sc-if>
+          <div style="margin-top:auto;font-size:12.5px;color:#8D8177;line-height:1.6">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>For international offices and career centers.</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>국제처, 취업지원센터와 함께합니다.</span></sc-if>
+          </div>
+        </div>
+        <div style="border:1px solid #E8E0D7;border-radius:10px;padding:36px 32px;display:flex;flex-direction:column;gap:14px;transition:border-color .3s" style-hover="border-color:#483438">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:#8A7A7F">03</div>
+          <div style="font-size:18px;font-weight:600;color:#483438">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Teams &amp; companies</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>팀 &amp; 기업</span></sc-if>
+          </div>
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+            <p style="margin:0;font-size:14.5px;line-height:1.75;color:#4A4441">Practical workshops for teams that work across cultures: presence, communication, and calm under pressure.</p>
+          </sc-if>
+          <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;font-size:14px;line-height:1.85;color:#4A4441">문화를 넘나들며 일하는 팀을 위한 실용적인 워크숍: 존재감, 커뮤니케이션, 그리고 압박 속의 평정.</p>
+          </sc-if>
+          <div style="margin-top:auto;font-size:12.5px;color:#8D8177;line-height:1.6">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>For global teams and people leaders.</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>글로벌 팀과 리더를 위해 설계합니다.</span></sc-if>
+          </div>
+        </div>
+      </div>
+
+      <div class="format-grid" style="border-top:1px solid #E8E0D7;padding-top:40px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#483438">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Workshop</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>워크숍</span></sc-if>
+          </div>
+          <div style="font-size:13.5px;color:#8D8177;line-height:1.6">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>60 to 120 minutes, around one or two senses.</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>60~120분, 한두 가지 감각에 집중.</span></sc-if>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#483438">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Short series</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>단기 시리즈</span></sc-if>
+          </div>
+          <div style="font-size:13.5px;color:#8D8177;line-height:1.6">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>3 to 5 sessions built around one real goal.</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>하나의 실제 목표를 위한 3~5회 세션.</span></sc-if>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#483438">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Full program</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>정규 프로그램</span></sc-if>
+          </div>
+          <div style="font-size:13.5px;color:#8D8177;line-height:1.6">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>12 to 16 weeks through all five senses.</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>12~16주, 다섯 감각 전체를 지나는 여정.</span></sc-if>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#483438">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Custom</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>맞춤 설계</span></sc-if>
+          </div>
+          <div style="font-size:13.5px;color:#8D8177;line-height:1.6">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Shaped around your people and goals.</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>대상과 목표에 맞춘 형태.</span></sc-if>
+          </div>
+        </div>
+      </div>
+      <div style="border-top:1px solid #E8E0D7;padding-top:44px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+        <div style="font-family:'Cormorant Garamond','Gowun Batang',serif;font-style:italic;font-size:22px;line-height:1.5;color:#483438">
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Not sure which fits? That is what the intro call is for.</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="font-style:normal;font-family:'Gowun Batang',serif;font-size:18px">어떤 형태가 맞을지 모르겠다면, 함께 찾으면 됩니다. 그게 첫 상담입니다.</span></sc-if>
+        </div>
+        <a href="#contact" style="text-decoration:none;background:#483438;color:#FFFFFF;padding:15px 30px;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;border-radius:3px;transition:background .25s" style-hover="background:#35272B">
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span style="color:#FFFFFF">Book an intro call</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="color:#FFFFFF">첫 상담 예약</span></sc-if>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <sc-if value="{{ showTestimonials }}" hint-placeholder-val="{{ true }}">
+    <section data-screen-label="Testimonials" style="background:#F3EDE7">
+      <div style="max-width:1160px;margin:0 auto;padding:96px 32px;display:flex;flex-direction:column;gap:44px">
+        <div style="font-size:12px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:#8A7A7F;text-align:center">
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>What people say</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>참여자들의 이야기</span></sc-if>
+        </div>
+        <div class="testimonial-grid" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px">
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+              <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.6;color:#483438">“Her idea to spend a full month to re-brand my LinkedIn, resume, and cover letter led me to all of a sudden get 4 job offers in one week.”</p>
+            </sc-if>
+            <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+              <p style="margin:0;font-family:'Gowun Batang',serif;font-size:15.5px;line-height:1.8;color:#483438">“링크드인, 이력서, 커버레터를 한 달 동안 리브랜딩하자는 그녀의 제안 덕분에, 갑자기 일주일 만에 네 곳에서 잡오퍼를 받았습니다.”</p>
+            </sc-if>
+            <div style="font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:#8D8177">
+              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Ethan Willick, early-career consultant</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>이든 윌릭, 주니어 컨설턴트</span></sc-if>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+              <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.6;color:#483438">“Rebecca’s session felt very frank and honest in a way that most tutoring and coaching I had before wasn’t. It felt like I was talking to a human and a friend.”</p>
+            </sc-if>
+            <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+              <p style="margin:0;font-family:'Gowun Batang',serif;font-size:15.5px;line-height:1.8;color:#483438">“레베카의 세션은 이전에 받아본 어떤 튜터링이나 코칭보다 솔직하고 진실했습니다. 사람과, 친구와 이야기하는 느낌이었어요.”</p>
+            </sc-if>
+            <div style="font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:#8D8177">
+              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Chaeyeon Kim, recent graduate</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>김채연, 최근 졸업생</span></sc-if>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+              <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.6;color:#483438">“When I faced a wave of internship rejections, my regular check-ins with Rebecca kept me grounded. I was able to maintain a resilient mindset and keep moving forward.”</p>
+            </sc-if>
+            <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+              <p style="margin:0;font-family:'Gowun Batang',serif;font-size:15.5px;line-height:1.8;color:#483438">“인턴십 불합격이 쏟아지던 시기, 레베카와의 정기적인 체크인이 저를 붙들어 주었습니다. 단단한 마음을 지키며 계속 나아갈 수 있었어요.”</p>
+            </sc-if>
+            <div style="font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:#8D8177">
+              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Dain Kim, university student in the US</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>김다인, 미국 대학 재학생</span></sc-if>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" data-screen-label="Contact" style="background:#FBF8F5;scroll-margin-top:76px">
+    <div class="contact-grid" style="max-width:1160px;margin:0 auto;padding:112px 32px 120px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:72px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:22px">
+        <div style="font-size:12px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:#8A7A7F">
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Contact</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>문의</span></sc-if>
+        </div>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+          <h2 style="margin:0;font-size:clamp(30px,3.4vw,40px);font-weight:700;color:#483438;letter-spacing:-0.5px">Book your intro call.</h2>
+        </sc-if>
+        <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+          <h2 style="margin:0;font-size:clamp(28px,3vw,36px);font-weight:700;color:#483438">첫 상담을 예약하세요.</h2>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+          <p style="margin:0;font-size:16px;line-height:1.75;color:#4A4441;max-width:440px">No preparation needed. Tell me a little about where you are. A few sentences are enough. We’ll find a time to talk, in English or Korean.</p>
+        </sc-if>
+        <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:0;font-size:15px;line-height:1.9;color:#4A4441;max-width:440px">준비하지 않으셔도 됩니다. 지금 어디쯤 있는지 짧게 들려주세요. 몇 문장이면 충분합니다. 영어로든 한국어로든, 함께 이야기할 시간을 찾겠습니다.</p>
+        </sc-if>
+        <div style="font-size:13px;color:#8D8177;margin-top:12px">
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Seoul · online everywhere · replies within two working days</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>서울 · 온라인 어디서든 · 영업일 기준 2일 내 답장</span></sc-if>
+        </div>
+      </div>
+
+      <div style="background:#F3EDE7;padding:44px 44px 48px;border-radius:12px">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display:flex;flex-direction:column;gap:22px">
+            <input type="hidden" name="_subject" value="New intro call request from the Yeon Studio website">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><input type="hidden" name="language" value="English"></sc-if>
+            <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><input type="hidden" name="language" value="Korean"></sc-if>
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+            <div class="form-name-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <label for="name" style="font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#8A7A7F">
+                  <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Name</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>이름</span></sc-if>
+                </label>
+                <input id="name" name="name" type="text" autocomplete="name" required="required" style="border:1px solid #E8E0D7;background:#FFFEFC;padding:13px 14px;font-size:14.5px;color:#4A4441;outline:none;width:100%;box-sizing:border-box" style-focus="border-color:#483438">
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <label for="email" style="font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#8A7A7F">
+                  <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Email</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>이메일</span></sc-if>
+                </label>
+                <input id="email" name="email" type="email" autocomplete="email" required="required" style="border:1px solid #E8E0D7;background:#FFFEFC;padding:13px 14px;font-size:14.5px;color:#4A4441;outline:none;width:100%;box-sizing:border-box" style-focus="border-color:#483438">
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <label for="inquiry-type" style="font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#8A7A7F">
+                <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>I’m reaching out as</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>문의 유형</span></sc-if>
+              </label>
+              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+                <select id="inquiry-type" name="inquiry_type" required="required" style="border:1px solid #E8E0D7;background:#FFFEFC;padding:13px 14px;font-size:14.5px;color:#4A4441;outline:none;width:100%;box-sizing:border-box;appearance:auto">
+                  <option value="individual">An individual</option>
+                  <option value="university_or_school">A university or school</option>
+                  <option value="company_or_team">A company or team</option>
+                </select>
+              </sc-if>
+              <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+                <select id="inquiry-type" name="inquiry_type" required="required" style="border:1px solid #E8E0D7;background:#FFFEFC;padding:13px 14px;font-size:14.5px;color:#4A4441;outline:none;width:100%;box-sizing:border-box;appearance:auto">
+                  <option value="individual">개인</option>
+                  <option value="university_or_school">대학 · 학교</option>
+                  <option value="company_or_team">기업 · 팀</option>
+                </select>
+              </sc-if>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <label for="message" style="font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#8A7A7F">
+                <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Message</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>메시지</span></sc-if>
+              </label>
+              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+                <textarea id="message" name="message" rows="5" required="required" placeholder="Where are you now, and what’s ahead of you?" style="border:1px solid #E8E0D7;background:#FFFEFC;padding:13px 14px;font-size:14.5px;color:#4A4441;outline:none;resize:vertical;width:100%;box-sizing:border-box;font-family:inherit;line-height:1.6" style-focus="border-color:#483438"></textarea>
+              </sc-if>
+              <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+                <textarea id="message" name="message" rows="5" required="required" placeholder="지금 어떤 상황이고, 앞에 무엇이 놓여 있나요?" style="border:1px solid #E8E0D7;background:#FFFEFC;padding:13px 14px;font-size:14.5px;color:#4A4441;outline:none;resize:vertical;width:100%;box-sizing:border-box;font-family:inherit;line-height:1.6" style-focus="border-color:#483438"></textarea>
+              </sc-if>
+            </div>
+            <button type="submit" style="border:0;background:#483438;color:#FFFFFF;padding:16px;text-align:center;font-size:12px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;cursor:pointer;border-radius:3px;transition:background .25s" style-hover="background:#35272B">
+              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span style="color:#FFFFFF">Request an intro call</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="color:#FFFFFF">상담 요청하기</span></sc-if>
+            </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer data-screen-label="Footer" style="background:#483438">
+    <div style="max-width:1160px;margin:0 auto;padding:64px 32px 40px;display:flex;flex-direction:column;gap:40px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap">
+        <img src="assets/logos/lockup-white.svg" alt="Yeon Studio by Rebecca" style="height:48px;display:block">
+        <div style="display:flex;align-items:center;gap:20px">
+          <img src="assets/icons/white/sight-10.svg" alt="Sight" style="width:22px;height:22px;opacity:0.85">
+          <img src="assets/icons/white/sound-09.svg" alt="Sound" style="width:22px;height:22px;opacity:0.85">
+          <img src="assets/icons/white/taste-05.svg" alt="Taste" style="width:22px;height:22px;opacity:0.85">
+          <img src="assets/icons/white/smell-07.svg" alt="Smell" style="width:22px;height:22px;opacity:0.85">
+          <img src="assets/icons/white/touch-08.svg" alt="Touch" style="width:22px;height:22px;opacity:0.85">
+        </div>
+      </div>
+      <div style="height:1px;background:rgba(255,255,255,0.16)"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+        <div style="font-family:'Cormorant Garamond','Gowun Batang',serif;font-style:italic;font-size:16px;color:rgba(255,255,255,0.75)">
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>연 means connection.</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>연(緣)은 ‘연결’을 뜻합니다.</span></sc-if>
+        </div>
+        <div style="font-size:12px;letter-spacing:0.6px;color:rgba(255,255,255,0.6)">© 2026 Yeon Studio by Rebecca · Embodied Global Confidence</div>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;defaultLang&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;en&quot;, &quot;kr&quot;], &quot;default&quot;: &quot;en&quot;, &quot;tsType&quot;: &quot;'en'|'kr'&quot;, &quot;section&quot;: &quot;Language&quot;},
+  &quot;showTestimonials&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;section&quot;: &quot;Sections&quot;},
+  &quot;showInkDots&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;section&quot;: &quot;Sections&quot;}
+}">
+class Component extends DCLogic {
+  state = { lang: null, sense: 'sight', scrolled: false };
+
+  componentDidMount() {
+    try {
+      const saved = window.localStorage.getItem('yeon.lang');
+      if (saved === 'en' || saved === 'kr') this.setState({ lang: saved });
+      document.documentElement.lang = saved === 'kr' ? 'ko' : 'en';
+    } catch (e) {}
+    this._onScroll = () => {
+      const sc = window.scrollY > 520;
+      if (sc !== this.state.scrolled) this.setState({ scrolled: sc });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+  }
+
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+  }
+
+  currentLang() {
+    return this.state.lang || this.props.defaultLang || 'en';
+  }
+
+  setLang(l) {
+    this.setState({ lang: l });
+    document.documentElement.lang = l === 'kr' ? 'ko' : 'en';
+    try { window.localStorage.setItem('yeon.lang', l); } catch (e) {}
+  }
+
+  senseData() {
+    return [
+      {
+        key: 'sight', ink: '#235F9E',
+        icon: 'assets/icons/sight-10.svg', iconW: 'assets/icons/white/sight-10.svg',
+        en: {
+          name: 'Sight', tag: 'How you are seen',
+          inkName: 'Ink: Tsuki-yo, moonlit night',
+          poetry: 'The color of the sky just after dark. The eyes adjust, and perception sharpens.',
+          desc: 'Identity, personal brand, image, posture, and the visual first impressions you send before a word is spoken.',
+          outcome: 'A clearer sense of how appearance, posture, and visual cues shape first impressions, and how to make them intentional.'
+        },
+        kr: {
+          name: '시각', tag: '어떻게 보이는가',
+          inkName: '잉크: 츠키요, 달밤',
+          poetry: '어두워진 직후의 하늘색. 눈이 적응하며, 지각이 선명해집니다.',
+          desc: '정체성, 퍼스널 브랜드, 이미지, 자세, 그리고 말을 꺼내기 전에 전해지는 시각적 첫인상.',
+          outcome: '외모, 자세, 시각 신호가 첫인상을 어떻게 만드는지 선명하게 인식하고, 의도를 담아 다듬게 됩니다.'
+        }
+      },
+      {
+        key: 'sound', ink: '#4C588B',
+        icon: 'assets/icons/sound-09.svg', iconW: 'assets/icons/white/sound-09.svg',
+        en: {
+          name: 'Sound', tag: 'How you sound',
+          inkName: 'Ink: Shin-kai, deep sea',
+          poetry: 'A blue that carries weight. It holds the way words move through a room and settle in the body.',
+          desc: 'Voice, tone, rhythm, presentation presence, and communication across languages.',
+          outcome: 'Less self-consciousness around your voice, and more ease when speaking, in any language.'
+        },
+        kr: {
+          name: '청각', tag: '어떻게 들리는가',
+          inkName: '잉크: 신카이, 심해',
+          poetry: '무게를 지닌 파랑. 말이 공간을 지나 몸에 내려앉는 방식을 담고 있습니다.',
+          desc: '목소리, 톤, 리듬, 발표 존재감, 그리고 언어를 넘나드는 커뮤니케이션.',
+          outcome: '목소리에 대한 자의식은 줄고, 어떤 언어로든 말할 때의 편안함은 커집니다.'
+        }
+      },
+      {
+        key: 'taste', ink: '#B63C26',
+        icon: 'assets/icons/taste-05.svg', iconW: 'assets/icons/white/taste-05.svg',
+        en: {
+          name: 'Taste', tag: 'How you connect',
+          inkName: 'Ink: Fuyu-gaki, winter persimmon',
+          poetry: 'The warmest color in the palette. Ripe, specific, seasonal. The one that invites.',
+          desc: 'Culture, etiquette, food rituals, discernment, and the shared tables where trust is built.',
+          outcome: 'More comfort with uncertainty and unfamiliar social situations, at dinners, interviews, and everything between.'
+        },
+        kr: {
+          name: '미각', tag: '어떻게 연결되는가',
+          inkName: '잉크: 후유가키, 겨울 감',
+          poetry: '팔레트에서 가장 따뜻한 색. 잘 익고, 구체적이며, 계절을 담은, 사람을 초대하는 색입니다.',
+          desc: '문화, 에티켓, 음식의 리추얼, 분별력, 그리고 신뢰가 쌓이는 함께하는 식탁.',
+          outcome: '낯선 자리와 불확실한 상황이 한결 편안해집니다. 식사 자리에서도, 면접장에서도요.'
+        }
+      },
+      {
+        key: 'smell', ink: '#035844',
+        icon: 'assets/icons/smell-07.svg', iconW: 'assets/icons/white/smell-07.svg',
+        en: {
+          name: 'Smell', tag: 'How you ground yourself',
+          inkName: 'Ink: Shin-ryoku, deep forest',
+          poetry: 'The smell of a forest after rain. The fastest route to memory, and the most direct path to calm.',
+          desc: 'Memory, emotional regulation, grounding, and the pre-performance rituals that steady you.',
+          outcome: 'The ability to regulate emotion and reach calm quickly, before the interview, the talk, the first day.'
+        },
+        kr: {
+          name: '후각', tag: '어떻게 안정을 찾는가',
+          inkName: '잉크: 신료쿠, 깊은 숲',
+          poetry: '비 온 뒤 숲의 냄새. 기억으로 가는 가장 빠른 길이자, 평온으로 가는 가장 곧은 길입니다.',
+          desc: '기억, 감정 조절, 그라운딩, 그리고 중요한 순간 전에 마음을 다잡는 리추얼.',
+          outcome: '감정을 조절하고 빠르게 평온에 닿는 힘. 면접 전에도, 발표 전에도, 첫 출근 전에도 쓸 수 있습니다.'
+        }
+      },
+      {
+        key: 'touch', ink: '#62677A',
+        icon: 'assets/icons/touch-08.svg', iconW: 'assets/icons/white/touch-08.svg',
+        en: {
+          name: 'Touch', tag: 'How you hold your ground',
+          inkName: 'Ink: Fuyu-shogun, winter general',
+          poetry: 'Solid, mineral, still. This color does not move. It holds.',
+          desc: 'Movement, boundaries, physical confidence, and calm under pressure.',
+          outcome: 'Greater physical ease and awareness, especially in the moments that press on you.'
+        },
+        kr: {
+          name: '촉각', tag: '어떻게 중심을 지키는가',
+          inkName: '잉크: 후유쇼군, 겨울 장군',
+          poetry: '단단하고, 광물 같고, 고요한. 이 색은 움직이지 않습니다. 붙들어 줍니다.',
+          desc: '움직임, 경계, 신체적 자신감, 그리고 압박 속의 평정.',
+          outcome: '몸의 편안함과 감각적 인식이 자랍니다. 특히 부담이 큰 순간에 힘이 됩니다.'
+        }
+      }
+    ];
+  }
+
+  renderVals() {
+    const lang = this.currentLang();
+    const en = lang === 'en';
+    const kr = !en;
+    const data = this.senseData();
+    const selKey = this.state.sense;
+    const sel = data.find((d) => d.key === selKey) || data[0];
+    const selLoc = en ? sel.en : sel.kr;
+
+    const senses = data.map((d) => {
+      const loc = en ? d.en : d.kr;
+      const isSel = d.key === selKey;
+      return {
+        key: d.key,
+        name: loc.name,
+        tag: loc.tag,
+        icon: d.icon,
+        bar: isSel ? d.ink : 'transparent',
+        bg: isSel ? d.ink + '10' : 'transparent',
+        select: () => this.setState({ sense: d.key })
+      };
+    });
+
+    return {
+      en: en,
+      kr: kr,
+      setEn: () => this.setLang('en'),
+      setKr: () => this.setLang('kr'),
+      navTop: !this.state.scrolled,
+      navScrolled: this.state.scrolled,
+      tEnColor: en ? '#FFFFFF' : 'rgba(255,255,255,0.5)',
+      tKrColor: kr ? '#FFFFFF' : 'rgba(255,255,255,0.5)',
+      sEnColor: en ? '#483438' : '#B3A69A',
+      sKrColor: kr ? '#483438' : '#B3A69A',
+
+      senses: senses,
+      sName: selLoc.name,
+      sInkName: selLoc.inkName,
+      sPoetry: selLoc.poetry,
+      sDesc: selLoc.desc,
+      sOutcome: selLoc.outcome,
+      sInk: sel.ink,
+      sIconWhite: sel.iconW,
+      panelTint: sel.ink + '0E',
+      lblPractice: en ? 'In practice' : '실제로 다루는 것',
+      lblChanges: en ? 'What changes' : '달라지는 것',
+
+      showInkDots: this.props.showInkDots ?? true,
+      showTestimonials: this.props.showTestimonials ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>
