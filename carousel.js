@@ -48,7 +48,30 @@
     });
   };
 
+  const handleControlClick = (event) => {
+    const button = event.currentTarget;
+    if (!(button instanceof HTMLButtonElement) || button.disabled) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+    const track = button.closest(".testimonial-carousel")?.querySelector(trackSelector);
+    if (!track) return;
+    moveCarousel(track, Number(button.dataset.testimonialDirection));
+  };
+
+  const bindControls = (track) => {
+    const carousel = track.closest(".testimonial-carousel");
+    if (!carousel) return;
+
+    carousel.querySelectorAll("[data-testimonial-direction]").forEach((button) => {
+      if (button.dataset.carouselControlReady === "true") return;
+      button.dataset.carouselControlReady = "true";
+      button.addEventListener("click", handleControlClick);
+    });
+  };
+
   const initializeTrack = (track) => {
+    bindControls(track);
     if (track.dataset.carouselReady === "true") return;
     track.dataset.carouselReady = "true";
 
@@ -68,7 +91,7 @@
   document.addEventListener("click", (event) => {
     if (!(event.target instanceof Element)) return;
     const button = event.target.closest("[data-testimonial-direction]");
-    if (!button || button.disabled) return;
+    if (!button || button.disabled || button.dataset.carouselControlReady === "true") return;
 
     const track = button.closest(".testimonial-carousel")?.querySelector(trackSelector);
     if (!track) return;

@@ -42,9 +42,9 @@
   }
 </style>
 <link rel="icon" href="./assets/logos/mark-doyou.svg" type="image/svg+xml">
-<link rel="stylesheet" href="./styles.css?v=testimonial-carousel-1">
+<link rel="stylesheet" href="./styles.css?v=layout-polish-1">
 <script src="./support.js"></script>
-<script src="./carousel.js?v=1" defer></script>
+<script src="./carousel.js?v=2" defer></script>
 </head>
 <body>
 <main id="preview-lock" class="preview-lock" aria-labelledby="preview-lock-title">
@@ -230,12 +230,12 @@
           </a>
         </div>
         <sc-if value="{{ showInkDots }}" hint-placeholder-val="{{ true }}">
-          <div style="display:flex;align-items:center;gap:14px;margin-top:18px">
-            <span style="width:9px;height:9px;border-radius:50%;background:#235F9E;box-shadow:0 0 0 3px #235F9E3D;animation:ysBreathe 5s ease-in-out infinite"></span>
-            <span style="width:9px;height:9px;border-radius:50%;background:#4C588B;box-shadow:0 0 0 3px #4C588B3D;animation:ysBreathe 5s ease-in-out .5s infinite"></span>
-            <span style="width:9px;height:9px;border-radius:50%;background:#B63C26;box-shadow:0 0 0 3px #B63C263D;animation:ysBreathe 5s ease-in-out 1s infinite"></span>
-            <span style="width:9px;height:9px;border-radius:50%;background:#035844;box-shadow:0 0 0 3px #0358443D;animation:ysBreathe 5s ease-in-out 1.5s infinite"></span>
-            <span style="width:9px;height:9px;border-radius:50%;background:#62677A;box-shadow:0 0 0 3px #62677A3D;animation:ysBreathe 5s ease-in-out 2s infinite"></span>
+          <div class="hero-sense-icons" aria-hidden="true">
+            <img src="assets/icons/white/sight-10.svg" alt="">
+            <img src="assets/icons/white/sound-09.svg" alt="">
+            <img src="assets/icons/white/taste-05.svg" alt="">
+            <img src="assets/icons/white/smell-07.svg" alt="">
+            <img src="assets/icons/white/touch-08.svg" alt="">
           </div>
         </sc-if>
       </div>
@@ -244,14 +244,16 @@
 
   <!-- ===================== STORY ===================== -->
   <section id="story" data-screen-label="About Rebecca" style="background:#F3EDE7;scroll-margin-top:76px">
-    <div class="story-grid" style="max-width:1160px;margin:0 auto;padding:112px 32px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start">
-      <div style="display:flex;flex-direction:column;gap:10px">
-        <img src="assets/photos/rebecca-3.jpeg" alt="Rebecca leading a cross-cultural coaching workshop" loading="lazy" decoding="async" style="width:100%;height:440px;object-fit:cover;object-position:58% 52%;display:block;border-radius:8px">
-        <div style="font-size:12px;color:#8D8177;letter-spacing:0.4px">
+    <div class="story-grid">
+      <div class="story-media">
+        <div class="story-photo-frame">
+          <img class="story-photo" src="assets/photos/rebecca-3.jpeg" alt="Rebecca leading a cross-cultural coaching workshop" loading="lazy" decoding="async">
+        </div>
+        <div class="story-caption">
           <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Sixteen years, five continents, one method.</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>16년, 5개 대륙, 하나의 메소드.</span></sc-if>
         </div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:22px">
+      <div class="story-content">
         <div style="font-size:12px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:#8A7A7F">
           <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>My story</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>저의 이야기</span></sc-if>
         </div>
@@ -350,10 +352,10 @@
       </div>
 
       <div class="method-grid" style="display:grid;grid-template-columns:minmax(280px,5fr) minmax(0,7fr);gap:40px">
-        <div style="display:flex;flex-direction:column">
+        <div class="sense-list">
           <sc-for list="{{ senses }}" as="s" hint-placeholder-count="5">
-            <div onClick="{{ s.select }}" style="display:flex;align-items:center;gap:18px;padding:20px 22px;cursor:pointer;border-top:1px solid #E8E0D7;border-left:3px solid {{ s.bar }};background:{{ s.bg }};transition:background .3s,border-color .3s">
-              <div style="width:32px;height:32px;flex-shrink:0;background-image:url({{ s.icon }});background-size:contain;background-repeat:no-repeat;background-position:center"></div>
+            <div class="sense-option" onClick="{{ s.select }}" style="border-left-color:{{ s.bar }};background:{{ s.bg }}">
+              <div class="sense-option__icon" style="background-image:url({{ s.icon }})"></div>
               <div style="display:flex;flex-direction:column;gap:2px">
                 <div style="font-size:15px;font-weight:600;color:#483438;letter-spacing:0.3px">{{ s.name }}</div>
                 <div style="font-size:13px;color:#8D8177">{{ s.tag }}</div>
@@ -363,10 +365,10 @@
           <div style="border-top:1px solid #E8E0D7"></div>
         </div>
 
-        <div style="background:{{ panelTint }};border-radius:10px;padding:40px 44px;box-sizing:border-box;display:flex;flex-direction:column;gap:22px;justify-content:center;transition:background .45s">
-          <div style="display:flex;align-items:center;gap:20px">
-            <div style="width:64px;height:64px;border-radius:8px;background:{{ sInk }};display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .45s">
-              <div style="width:36px;height:36px;background-image:url({{ sIconWhite }});background-size:contain;background-repeat:no-repeat;background-position:center"></div>
+        <div class="sense-panel" style="background:{{ panelTint }}">
+          <div class="sense-panel__heading">
+            <div class="sense-panel__icon-tile" style="background:{{ sInk }}">
+              <div class="sense-panel__icon" style="background-image:url({{ sIconWhite }})"></div>
             </div>
             <div style="display:flex;flex-direction:column;gap:4px">
               <div style="font-size:24px;font-weight:700;color:#483438">{{ sName }}</div>
