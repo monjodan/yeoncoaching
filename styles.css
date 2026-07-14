@@ -42,7 +42,8 @@ html.site-locked body > #preview-lock {
 }
 
 .preview-lock__logo {
-  width: 150px;
+  width: 214px;
+  height: auto;
   display: block;
   margin-bottom: 44px;
 }
@@ -217,8 +218,9 @@ button[type="submit"]:hover {
     padding: 0 20px !important;
   }
 
-  .nav-inner img {
-    height: 34px !important;
+  .nav-inner .nav-logo {
+    width: 146px !important;
+    height: auto !important;
   }
 
   .nav-inner > div {
