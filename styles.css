@@ -264,7 +264,7 @@ button[type="submit"]:hover {
 }
 
 .sense-panel {
-  min-height: 480px;
+  min-height: 0;
   padding: 40px 44px;
   display: flex;
   flex-direction: column;
@@ -297,6 +297,16 @@ button[type="submit"]:hover {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 135%;
+}
+
+@media (min-width: 981px) {
+  .sense-list {
+    height: 100%;
+  }
+
+  .sense-option {
+    flex: 1;
+  }
 }
 
 .testimonial-section {

@@ -42,9 +42,9 @@
   }
 </style>
 <link rel="icon" href="./assets/logos/mark-doyou.svg" type="image/svg+xml">
-<link rel="stylesheet" href="./styles.css?v=layout-polish-1">
+<link rel="stylesheet" href="./styles.css?v=layout-polish-2">
 <script src="./support.js"></script>
-<script src="./carousel.js?v=3" defer></script>
+<script src="./carousel.js?v=6" defer></script>
 </head>
 <body>
 <main id="preview-lock" class="preview-lock" aria-labelledby="preview-lock-title">
@@ -564,15 +564,15 @@
         <div class="testimonial-carousel">
           <div class="testimonial-carousel__header">
             <div class="testimonial-carousel__hint">
-              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Swipe, scroll, or use the arrows to explore all nine stories.</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>스와이프하거나 화살표를 눌러 아홉 가지 이야기를 모두 만나보세요.</span></sc-if>
+              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Use the arrows to explore all nine stories. Trackpad and swipe work too.</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>화살표로 아홉 가지 이야기를 모두 만나보세요. 트랙패드와 스와이프도 가능합니다.</span></sc-if>
             </div>
             <div class="testimonial-carousel__controls">
-              <button class="testimonial-carousel__button" type="button" data-testimonial-direction="-1" aria-label="{{ testimonialPrevLabel }}">
+              <button class="testimonial-carousel__button" type="button" onClick="{{ testimonialPrevious }}" data-testimonial-direction="-1" aria-label="{{ testimonialPrevLabel }}">
                 <span aria-hidden="true">←</span>
                 <span class="testimonial-carousel__button-label"><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">Previous</sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">이전</sc-if></span>
               </button>
               <div class="testimonial-carousel__counter" data-testimonial-counter aria-live="polite">1–3 / 9</div>
-              <button class="testimonial-carousel__button" type="button" data-testimonial-direction="1" aria-label="{{ testimonialNextLabel }}">
+              <button class="testimonial-carousel__button" type="button" onClick="{{ testimonialNext }}" data-testimonial-direction="1" aria-label="{{ testimonialNextLabel }}">
                 <span class="testimonial-carousel__button-label"><sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">Next</sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">다음</sc-if></span>
                 <span aria-hidden="true">→</span>
               </button>
@@ -954,6 +954,8 @@ class Component extends DCLogic {
       testimonialPrevLabel: en ? 'Previous testimonials' : '이전 후기',
       testimonialNextLabel: en ? 'Next testimonials' : '다음 후기',
       testimonialCarouselLabel: en ? 'Student testimonial carousel' : '참여자 후기 슬라이더',
+      testimonialPrevious: () => window.YeonCarousel?.move(-1),
+      testimonialNext: () => window.YeonCarousel?.move(1),
 
       showInkDots: this.props.showInkDots ?? true,
       showTestimonials: this.props.showTestimonials ?? true

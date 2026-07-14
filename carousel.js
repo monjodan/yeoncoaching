@@ -1,6 +1,5 @@
 (() => {
   const trackSelector = ".testimonial-track";
-  const boundControls = new WeakSet();
 
   const prefersReducedMotion = () =>
     window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
@@ -28,59 +27,50 @@
     const { cards, step, visible } = metrics;
     const start = Math.min(cards.length, Math.round(track.scrollLeft / step) + 1);
     const end = Math.min(cards.length, start + visible - 1);
-    const atStart = track.scrollLeft <= 2;
-    const atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
     const counter = carousel.querySelector("[data-testimonial-counter]");
     const previous = carousel.querySelector('[data-testimonial-direction="-1"]');
     const next = carousel.querySelector('[data-testimonial-direction="1"]');
 
     if (counter) counter.textContent = visible > 1 ? `${start}–${end} / ${cards.length}` : `${start} / ${cards.length}`;
-    if (previous) previous.disabled = atStart;
-    if (next) next.disabled = atEnd;
+    if (previous) previous.disabled = false;
+    if (next) next.disabled = false;
   };
 
   const moveCarousel = (track, direction) => {
     const metrics = getMetrics(track);
     if (!metrics) return;
 
-    track.scrollBy({
-      left: direction * metrics.step,
+    const maximum = Math.max(0, track.scrollWidth - track.clientWidth);
+    const atStart = track.scrollLeft <= 2;
+    const atEnd = track.scrollLeft >= maximum - 2;
+    let target = track.scrollLeft + direction * metrics.step;
+
+    if (direction < 0 && atStart) target = maximum;
+    if (direction > 0 && atEnd) target = 0;
+
+    track.scrollTo({
+      left: Math.max(0, Math.min(maximum, target)),
       behavior: prefersReducedMotion() ? "auto" : "smooth",
     });
   };
 
-  const handleControlClick = (event) => {
-    const button = event.currentTarget;
-    if (!(button instanceof HTMLButtonElement) || button.disabled) return;
-
-    event.preventDefault();
-    event.stopPropagation();
-    const track = button.closest(".testimonial-carousel")?.querySelector(trackSelector);
-    if (!track) return;
-    moveCarousel(track, Number(button.dataset.testimonialDirection));
-  };
-
-  const bindControls = (track) => {
-    const carousel = track.closest(".testimonial-carousel");
-    if (!carousel) return;
-
-    carousel.querySelectorAll("[data-testimonial-direction]").forEach((button) => {
-      if (boundControls.has(button)) return;
-      boundControls.add(button);
-      button.addEventListener("click", handleControlClick);
-    });
+  window.YeonCarousel = {
+    move(direction) {
+      const track = document.querySelector(trackSelector);
+      if (track) moveCarousel(track, Number(direction));
+    },
   };
 
   const initializeTrack = (track) => {
-    bindControls(track);
-    if (track.dataset.carouselReady === "true") return;
-    track.dataset.carouselReady = "true";
+    if (track.dataset.carouselReady !== "true") {
+      track.dataset.carouselReady = "true";
 
-    const cards = track.querySelectorAll(".testimonial-card");
-    cards.forEach((card, index) => {
-      card.setAttribute("role", "group");
-      card.setAttribute("aria-label", `${index + 1} / ${cards.length}`);
-    });
+      const cards = track.querySelectorAll(".testimonial-card");
+      cards.forEach((card, index) => {
+        card.setAttribute("role", "group");
+        card.setAttribute("aria-label", `${index + 1} / ${cards.length}`);
+      });
+    }
 
     window.requestAnimationFrame(() => updateCarousel(track));
   };
@@ -88,16 +78,6 @@
   const scanForTracks = () => {
     document.querySelectorAll(trackSelector).forEach(initializeTrack);
   };
-
-  document.addEventListener("click", (event) => {
-    if (!(event.target instanceof Element)) return;
-    const button = event.target.closest("[data-testimonial-direction]");
-    if (!button || button.disabled || boundControls.has(button)) return;
-
-    const track = button.closest(".testimonial-carousel")?.querySelector(trackSelector);
-    if (!track) return;
-    moveCarousel(track, Number(button.dataset.testimonialDirection));
-  });
 
   document.addEventListener("keydown", (event) => {
     if (!(event.target instanceof Element) || !event.target.matches(trackSelector)) return;
@@ -115,6 +95,10 @@
   window.addEventListener("resize", () => {
     document.querySelectorAll(trackSelector).forEach(updateCarousel);
   }, { passive: true });
+
+  window.addEventListener("load", () => {
+    document.querySelectorAll(trackSelector).forEach(updateCarousel);
+  }, { once: true });
 
   const observer = new MutationObserver(scanForTracks);
   const start = () => {
