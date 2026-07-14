@@ -249,11 +249,97 @@ button[type="submit"]:hover {
   text-transform: uppercase;
 }
 
-.testimonial-grid {
+.testimonial-carousel {
+  min-width: 0;
+}
+
+.testimonial-carousel__header {
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.testimonial-carousel__hint {
+  color: #857871;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  line-height: 1.5;
+}
+
+.testimonial-carousel__controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.testimonial-carousel__button {
+  min-height: 40px;
+  padding: 9px 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #cfc2ba;
+  border-radius: 999px;
+  background: transparent;
+  color: #483438;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.testimonial-carousel__button:hover:not(:disabled) {
+  border-color: #483438;
+  background: #483438;
+  color: #fff;
+}
+
+.testimonial-carousel__button:disabled {
+  cursor: default;
+  opacity: 0.32;
+}
+
+.testimonial-carousel__counter {
+  min-width: 66px;
+  color: #746861;
+  font-family: "Cormorant Garamond", "Gowun Batang", serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+}
+
+.testimonial-track {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 40px) / 3);
   gap: 20px;
   align-items: stretch;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2px 2px 20px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 2px;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.testimonial-track::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial-track:focus-visible {
+  outline: 3px solid #b63c26;
+  outline-offset: 4px;
 }
 
 .testimonial-card {
@@ -265,6 +351,8 @@ button[type="submit"]:hover {
   border-radius: 4px;
   background: #fbf8f5;
   box-shadow: 0 12px 34px rgba(72, 52, 56, 0.055);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .testimonial-card--accent {
@@ -349,9 +437,12 @@ button[type="submit"]:hover {
     gap: 48px !important;
   }
 
-  .program-grid,
-  .testimonial-grid {
+  .program-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .testimonial-track {
+    grid-auto-columns: calc((100% - 20px) / 2);
   }
 
   .testimonial-proof-grid {
@@ -449,7 +540,6 @@ button[type="submit"]:hover {
   .method-grid,
   .method-origin,
   .program-grid,
-  .testimonial-grid,
   .contact-grid,
   .form-name-grid,
   .sense-details,
@@ -504,6 +594,36 @@ button[type="submit"]:hover {
     padding: 28px 24px 24px;
   }
 
+  .testimonial-carousel__header {
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .testimonial-carousel__hint {
+    max-width: 180px;
+    font-size: 10.5px;
+  }
+
+  .testimonial-carousel__button {
+    width: 40px;
+    min-height: 40px;
+    padding: 8px;
+  }
+
+  .testimonial-carousel__button-label {
+    display: none;
+  }
+
+  .testimonial-carousel__counter {
+    min-width: 42px;
+    font-size: 16px;
+  }
+
+  .testimonial-track {
+    grid-auto-columns: minmax(280px, 86%);
+    gap: 14px;
+  }
+
   .contact-grid > div:last-child {
     padding: 32px 24px 36px !important;
   }
@@ -527,5 +647,9 @@ button[type="submit"]:hover {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .testimonial-track {
+    scroll-behavior: auto;
   }
 }
