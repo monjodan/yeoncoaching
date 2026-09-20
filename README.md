@@ -2,29 +2,19 @@
 
 Static bilingual website for Yeon Studio by Rebecca, deployed with GitHub Pages.
 
-## Private preview gate
+## Public website
 
-The deployed site currently uses a lightweight client-side password gate. Successful access is remembered in `sessionStorage`, so the password is requested again in a new browser session.
+The site is public at <https://yeoncoaching.com/>. The preview password gate has been removed, and search indexing is enabled.
 
-This is appropriate for review-stage access control, but it is not server-side security: a determined visitor can still inspect static source files.
+The GitHub Pages custom domain is `yeoncoaching.com`; `www.yeoncoaching.com` redirects to the canonical domain. HTTPS is managed by GitHub Pages.
 
-The password is stored only as a SHA-256 hash in `index.html`. To change it, generate a new hash and replace the `expectedHash` value:
+## Photography
 
-```sh
-printf '%s' 'new-password' | shasum -a 256
-```
+The homepage uses Rebecca’s `IMG_4407.jpg` workshop photo; the story section uses `IMG_4451.jpg` coaching photo from her supplied September 2026 folder. WebP copies preserve the original composition and use responsive CSS positioning. The workshop JPEG is used for social sharing.
 
-When the site is approved for public launch, remove the preview-lock markup and scripts, remove the corresponding rules from `styles.css`, and restore the robots setting in `index.html` to `index, follow`.
+## Contact
 
-## Contact form setup
-
-The form is ready for Formspree but intentionally uses a placeholder endpoint. To connect it:
-
-1. Create a form at [Formspree](https://formspree.io/).
-2. In `index.html`, replace `YOUR_FORM_ID` in `https://formspree.io/f/YOUR_FORM_ID` with the supplied form ID.
-3. Commit and push the change to `main`.
-
-The form sends `name`, `email`, `inquiry_type`, `message`, and `language`, and includes a honeypot field.
+The contact section links directly to Rebecca’s LinkedIn profile in a new tab. There is no enquiry form or form-processing service to configure.
 
 ## Local preview
 
@@ -40,4 +30,4 @@ Then open `http://127.0.0.1:8765/`.
 
 Pushing to `main` runs the GitHub Pages workflow in `.github/workflows/deploy-pages.yml`. The production URL is:
 
-<https://monjodan.github.io/yeoncoaching/>
+<https://yeoncoaching.com/>

@@ -1,114 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" class="site-locked">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yeon Studio by Rebecca | Embodied Global Confidence</title>
 <meta name="description" content="Bilingual coaching for embodied confidence across cultures, guided by Rebecca and the Five Senses Method.">
 <meta name="theme-color" content="#483438">
-<meta name="robots" content="noindex, nofollow, noarchive">
-<link rel="canonical" href="https://monjodan.github.io/yeoncoaching/">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://yeoncoaching.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Yeon Studio by Rebecca">
 <meta property="og:description" content="Feel at home in yourself, so you can feel at home anywhere.">
-<meta property="og:url" content="https://monjodan.github.io/yeoncoaching/">
-<meta property="og:image" content="https://monjodan.github.io/yeoncoaching/assets/photos/rebecca-3.jpeg">
-<script>
-  (() => {
-    try {
-      if (window.sessionStorage.getItem('yeon.preview.unlocked') === 'true') {
-        document.documentElement.classList.replace('site-locked', 'site-unlocked');
-      }
-    } catch (error) {}
-  })();
-</script>
-<style>
-  html.site-locked,
-  html.site-locked body {
-    min-height: 100%;
-    overflow: hidden;
-  }
-
-  body > #preview-lock {
-    display: none;
-  }
-
-  html.site-locked body > :not(#preview-lock):not(script) {
-    display: none !important;
-  }
-
-  html.site-locked body > #preview-lock {
-    display: grid;
-  }
-</style>
+<meta property="og:url" content="https://yeoncoaching.com/">
+<meta property="og:image" content="https://yeoncoaching.com/assets/photos/rebecca-workshop.jpg">
 <link rel="icon" href="./assets/logos/mark-doyou.svg" type="image/svg+xml">
-<link rel="stylesheet" href="./styles.css?v=layout-polish-2">
+<link rel="stylesheet" href="./styles.css?v=launch-20260920">
 <script src="./support.js"></script>
 <script src="./carousel.js?v=6" defer></script>
 </head>
 <body>
-<main id="preview-lock" class="preview-lock" aria-labelledby="preview-lock-title">
-  <div class="preview-lock__card">
-    <img class="preview-lock__logo" src="assets/logos/line-primary.svg" alt="Yeon Studio">
-    <div class="preview-lock__eyebrow">Private preview</div>
-    <h1 id="preview-lock-title">Client review in progress.</h1>
-    <p>This website is not public yet. Enter the preview password to continue.</p>
-    <form id="preview-lock-form" class="preview-lock__form">
-      <label for="preview-password">Password</label>
-      <div class="preview-lock__controls">
-        <input id="preview-password" name="preview-password" type="password" autocomplete="current-password" required autofocus>
-        <button type="submit">Enter preview</button>
-      </div>
-      <p id="preview-lock-status" class="preview-lock__status" role="status" aria-live="polite"></p>
-    </form>
-  </div>
-</main>
-<script>
-  (() => {
-    const expectedHash = '4ab5602a0d5a068a24540141a042bf0d6c08c3fbd2d0d1bd5ca33cc620c9bf5e';
-    const form = document.getElementById('preview-lock-form');
-    const input = document.getElementById('preview-password');
-    const status = document.getElementById('preview-lock-status');
-    const button = form.querySelector('button');
-
-    const digest = async (value) => {
-      const bytes = new TextEncoder().encode(value);
-      const buffer = await window.crypto.subtle.digest('SHA-256', bytes);
-      return Array.from(new Uint8Array(buffer), (byte) => byte.toString(16).padStart(2, '0')).join('');
-    };
-
-    const unlock = () => {
-      try {
-        window.sessionStorage.setItem('yeon.preview.unlocked', 'true');
-      } catch (error) {}
-      document.documentElement.classList.replace('site-locked', 'site-unlocked');
-      window.scrollTo(0, 0);
-      window.setTimeout(() => document.getElementById('top')?.focus(), 0);
-    };
-
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      button.disabled = true;
-      status.textContent = 'Checking password…';
-      input.removeAttribute('aria-invalid');
-
-      try {
-        if (await digest(input.value) === expectedHash) {
-          unlock();
-          return;
-        }
-        status.textContent = 'That password is not correct. Please try again.';
-        input.value = '';
-        input.setAttribute('aria-invalid', 'true');
-        input.focus();
-      } catch (error) {
-        status.textContent = 'The password could not be checked. Please refresh and try again.';
-      } finally {
-        button.disabled = false;
-      }
-    });
-  })();
-</script>
 <x-dc>
 <helmet>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -156,7 +66,7 @@
           <button type="button" onClick="{{ setKr }}" aria-label="한국어로 보기" style="border:0;background:none;padding:0;font-size:inherit;font-weight:inherit;letter-spacing:inherit;cursor:pointer;color:{{ tKrColor }};transition:color .25s">한국어</button>
         </div>
         <a class="nav-cta" href="#contact" style="text-decoration:none;background:#F3EDE7;color:#483438;padding:12px 22px;font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;border-radius:3px;transition:background .25s" style-hover="background:#FFFFFF">
-          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span style="color:#483438">Book an intro call</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="color:#483438">첫 상담 예약</span></sc-if>
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span style="color:#483438">Let’s connect</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="color:#483438">상담 문의</span></sc-if>
         </a>
           </div>
         </div>
@@ -189,7 +99,7 @@
           <button type="button" onClick="{{ setKr }}" aria-label="한국어로 보기" style="border:0;background:none;padding:0;font-size:inherit;font-weight:inherit;letter-spacing:inherit;cursor:pointer;color:{{ sKrColor }};transition:color .25s">한국어</button>
         </div>
         <a class="nav-cta" href="#contact" style="text-decoration:none;background:#483438;color:#FFFFFF;padding:12px 22px;font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;border-radius:3px;transition:background .25s" style-hover="background:#35272B">
-          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span style="color:#FFFFFF">Book an intro call</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="color:#FFFFFF">첫 상담 예약</span></sc-if>
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span style="color:#FFFFFF">Let’s connect</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="color:#FFFFFF">상담 문의</span></sc-if>
         </a>
           </div>
         </div>
@@ -200,7 +110,7 @@
   <!-- ===================== HERO ===================== -->
   <section id="top" tabindex="-1" data-screen-label="Hero" style="position:relative;overflow:hidden;background:#483438">
     <div class="hero-media" style="position:absolute;top:0;right:0;bottom:0;width:54%;pointer-events:none">
-      <img src="assets/photos/rebecca-3.jpeg" alt="Rebecca in a coaching workshop" style="width:100%;height:100%;object-fit:cover;object-position:52% 30%;display:block">
+      <img src="assets/photos/rebecca-workshop.webp" alt="Rebecca smiling while facilitating a group coaching workshop" width="5712" height="4284" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:62% 50%;display:block">
       <div style="position:absolute;inset:0;background:linear-gradient(90deg,#483438 0%,rgba(72,52,56,0.62) 32%,rgba(72,52,56,0.08) 72%),linear-gradient(0deg,rgba(72,52,56,0.6) 0%,rgba(72,52,56,0) 34%)"></div>
     </div>
     <div class="hero-content" style="position:relative;max-width:1160px;margin:0 auto;padding:172px 32px 112px">
@@ -223,7 +133,7 @@
         </div>
         <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap">
           <a href="#contact" style="text-decoration:none;background:#F3EDE7;color:#483438;padding:16px 32px;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;border-radius:3px;transition:background .25s" style-hover="background:#FFFFFF">
-            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span style="color:#483438">Book an intro call</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="color:#483438">첫 상담 예약</span></sc-if>
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span style="color:#483438">Let’s connect</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="color:#483438">상담 문의</span></sc-if>
           </a>
           <a href="#method" style="text-decoration:none;font-size:13px;font-weight:600;letter-spacing:1px;color:#EFE6DF;border-bottom:1px solid rgba(255,255,255,0.4);padding-bottom:4px">
             <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span style="color:#EFE6DF">Explore the Five Senses Method ↓</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="color:#EFE6DF">오감 메소드 살펴보기 ↓</span></sc-if>
@@ -247,7 +157,7 @@
     <div class="story-grid">
       <div class="story-media">
         <div class="story-photo-frame">
-          <img class="story-photo" src="assets/photos/rebecca-3.jpeg" alt="Rebecca leading a cross-cultural coaching workshop" loading="lazy" decoding="async">
+          <img class="story-photo" src="assets/photos/rebecca-coaching.webp" alt="Rebecca working with a participant during a coaching session" width="4284" height="5712" loading="lazy" decoding="async">
         </div>
         <div class="story-caption">
           <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Sixteen years, five continents, one method.</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>16년, 5개 대륙, 하나의 메소드.</span></sc-if>
@@ -518,7 +428,7 @@
           <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Not sure which fits? That is what the intro call is for.</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="font-style:normal;font-family:'Gowun Batang',serif;font-size:18px">어떤 형태가 맞을지 모르겠다면, 함께 찾으면 됩니다. 그게 첫 상담입니다.</span></sc-if>
         </div>
         <a href="#contact" style="text-decoration:none;background:#483438;color:#FFFFFF;padding:15px 30px;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;border-radius:3px;transition:background .25s" style-hover="background:#35272B">
-          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span style="color:#FFFFFF">Book an intro call</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="color:#FFFFFF">첫 상담 예약</span></sc-if>
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span style="color:#FFFFFF">Let’s connect</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="color:#FFFFFF">상담 문의</span></sc-if>
         </a>
       </div>
     </div>
@@ -677,16 +587,16 @@
           <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Contact</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>문의</span></sc-if>
         </div>
         <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
-          <h2 style="margin:0;font-size:clamp(30px,3.4vw,40px);font-weight:700;color:#483438;letter-spacing:-0.5px">Book your intro call.</h2>
+          <h2 style="margin:0;font-size:clamp(30px,3.4vw,40px);font-weight:700;color:#483438;letter-spacing:-0.5px">Let’s start a conversation.</h2>
         </sc-if>
         <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
-          <h2 style="margin:0;font-size:clamp(28px,3vw,36px);font-weight:700;color:#483438">첫 상담을 예약하세요.</h2>
+          <h2 style="margin:0;font-size:clamp(28px,3vw,36px);font-weight:700;color:#483438">대화를 시작해요.</h2>
         </sc-if>
         <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
-          <p style="margin:0;font-size:16px;line-height:1.75;color:#4A4441;max-width:440px">No preparation needed. Tell me a little about where you are. A few sentences are enough. We’ll find a time to talk, in English or Korean.</p>
+          <p style="margin:0;font-size:16px;line-height:1.75;color:#4A4441;max-width:440px">No preparation needed. Send me a message on LinkedIn and tell me a little about where you are. A few sentences are enough. We’ll find a time to talk, in English or Korean.</p>
         </sc-if>
         <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
-          <p style="margin:0;font-size:15px;line-height:1.9;color:#4A4441;max-width:440px">준비하지 않으셔도 됩니다. 지금 어디쯤 있는지 짧게 들려주세요. 몇 문장이면 충분합니다. 영어로든 한국어로든, 함께 이야기할 시간을 찾겠습니다.</p>
+          <p style="margin:0;font-size:15px;line-height:1.9;color:#4A4441;max-width:440px">준비하지 않으셔도 됩니다. 링크드인 메시지로 지금 어디쯤 있는지 짧게 들려주세요. 몇 문장이면 충분합니다. 영어로든 한국어로든, 함께 이야기할 시간을 찾겠습니다.</p>
         </sc-if>
         <div style="font-size:13px;color:#8D8177;margin-top:12px">
           <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Seoul · online everywhere · replies within two working days</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>서울 · 온라인 어디서든 · 영업일 기준 2일 내 답장</span></sc-if>
@@ -694,59 +604,21 @@
       </div>
 
       <div style="background:#F3EDE7;padding:44px 44px 48px;border-radius:12px">
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display:flex;flex-direction:column;gap:22px">
-            <input type="hidden" name="_subject" value="New intro call request from the Yeon Studio website">
-            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><input type="hidden" name="language" value="English"></sc-if>
-            <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><input type="hidden" name="language" value="Korean"></sc-if>
-            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
-            <div class="form-name-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-              <div style="display:flex;flex-direction:column;gap:8px">
-                <label for="name" style="font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#8A7A7F">
-                  <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Name</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>이름</span></sc-if>
-                </label>
-                <input id="name" name="name" type="text" autocomplete="name" required="required" style="border:1px solid #E8E0D7;background:#FFFEFC;padding:13px 14px;font-size:14.5px;color:#4A4441;outline:none;width:100%;box-sizing:border-box" style-focus="border-color:#483438">
-              </div>
-              <div style="display:flex;flex-direction:column;gap:8px">
-                <label for="email" style="font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#8A7A7F">
-                  <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Email</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>이메일</span></sc-if>
-                </label>
-                <input id="email" name="email" type="email" autocomplete="email" required="required" style="border:1px solid #E8E0D7;background:#FFFEFC;padding:13px 14px;font-size:14.5px;color:#4A4441;outline:none;width:100%;box-sizing:border-box" style-focus="border-color:#483438">
-              </div>
-            </div>
-            <div style="display:flex;flex-direction:column;gap:8px">
-              <label for="inquiry-type" style="font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#8A7A7F">
-                <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>I’m reaching out as</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>문의 유형</span></sc-if>
-              </label>
-              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
-                <select id="inquiry-type" name="inquiry_type" required="required" style="border:1px solid #E8E0D7;background:#FFFEFC;padding:13px 14px;font-size:14.5px;color:#4A4441;outline:none;width:100%;box-sizing:border-box;appearance:auto">
-                  <option value="individual">An individual</option>
-                  <option value="university_or_school">A university or school</option>
-                  <option value="company_or_team">A company or team</option>
-                </select>
-              </sc-if>
-              <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
-                <select id="inquiry-type" name="inquiry_type" required="required" style="border:1px solid #E8E0D7;background:#FFFEFC;padding:13px 14px;font-size:14.5px;color:#4A4441;outline:none;width:100%;box-sizing:border-box;appearance:auto">
-                  <option value="individual">개인</option>
-                  <option value="university_or_school">대학 · 학교</option>
-                  <option value="company_or_team">기업 · 팀</option>
-                </select>
-              </sc-if>
-            </div>
-            <div style="display:flex;flex-direction:column;gap:8px">
-              <label for="message" style="font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#8A7A7F">
-                <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Message</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>메시지</span></sc-if>
-              </label>
-              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
-                <textarea id="message" name="message" rows="5" required="required" placeholder="Where are you now, and what’s ahead of you?" style="border:1px solid #E8E0D7;background:#FFFEFC;padding:13px 14px;font-size:14.5px;color:#4A4441;outline:none;resize:vertical;width:100%;box-sizing:border-box;font-family:inherit;line-height:1.6" style-focus="border-color:#483438"></textarea>
-              </sc-if>
-              <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
-                <textarea id="message" name="message" rows="5" required="required" placeholder="지금 어떤 상황이고, 앞에 무엇이 놓여 있나요?" style="border:1px solid #E8E0D7;background:#FFFEFC;padding:13px 14px;font-size:14.5px;color:#4A4441;outline:none;resize:vertical;width:100%;box-sizing:border-box;font-family:inherit;line-height:1.6" style-focus="border-color:#483438"></textarea>
-              </sc-if>
-            </div>
-            <button type="submit" style="border:0;background:#483438;color:#FFFFFF;padding:16px;text-align:center;font-size:12px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;cursor:pointer;border-radius:3px;transition:background .25s" style-hover="background:#35272B">
-              <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span style="color:#FFFFFF">Request an intro call</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="color:#FFFFFF">상담 요청하기</span></sc-if>
-            </button>
-        </form>
+        <div style="display:flex;flex-direction:column;gap:22px;align-items:flex-start">
+          <div style="font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#8A7A7F">LinkedIn</div>
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
+            <h3 style="margin:0;font-size:26px;line-height:1.3;color:#483438">Connect with Rebecca.</h3>
+            <p style="margin:0;font-size:15px;line-height:1.8;color:#4A4441">Visit my LinkedIn profile to connect or send a message about coaching, workshops, or an intro call.</p>
+          </sc-if>
+          <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
+            <h3 style="margin:0;font-size:25px;line-height:1.4;color:#483438">레베카와 연결하세요.</h3>
+            <p style="margin:0;font-size:15px;line-height:1.9;color:#4A4441">링크드인 프로필에서 연결을 맺거나, 코칭·워크숍·첫 상담에 관한 메시지를 보내주세요.</p>
+          </sc-if>
+          <a class="linkedin-contact" href="https://www.linkedin.com/in/rebeccasouw/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;gap:12px;text-decoration:none;background:#483438;color:#FFFFFF;padding:17px 24px;text-align:center;font-size:12px;font-weight:600;letter-spacing:1.2px;border-radius:3px;line-height:1.5" style-hover="background:#35272B">
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span style="color:#FFFFFF">Find me on LinkedIn</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span style="color:#FFFFFF">링크드인 프로필 보기</span></sc-if>
+            <span aria-hidden="true" style="font-size:18px;color:#FFFFFF">↗</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>

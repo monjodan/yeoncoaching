@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yeoncoaching.com/sitemap.xml
