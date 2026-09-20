@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yeon Coaching by Rebecca | Embodied Global Confidence</title>
-<meta name="description" content="Bilingual coaching for embodied confidence across cultures, guided by Rebecca and the Five Senses Method.">
+<meta name="description" content="Coaching in English, Korean, and Chinese for embodied confidence across cultures, guided by Rebecca and the Five Senses Method.">
 <meta name="theme-color" content="#483438">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://yeoncoaching.com/">
@@ -14,9 +14,9 @@
 <meta property="og:url" content="https://yeoncoaching.com/">
 <meta property="og:image" content="https://yeoncoaching.com/assets/photos/rebecca-workshop.jpg">
 <link rel="icon" href="./assets/logos/mark-doyou.svg" type="image/svg+xml">
-<link rel="stylesheet" href="./styles.css?v=yeon-coaching-20260920">
+<link rel="stylesheet" href="./styles.css?v=review-20260920">
 <script src="./support.js"></script>
-<script src="./carousel.js?v=6" defer></script>
+<script src="./carousel.js?v=7" defer></script>
 </head>
 <body>
 <x-dc>
@@ -129,7 +129,7 @@
           <p style="margin:0;max-width:520px;font-size:16px;line-height:1.85;color:rgba(255,255,255,0.88)">학생과 직장인이 문화를 넘나들며 말하고, 움직이고, 연결되고, 결정할 수 있는 몸에 밴 자신감을 기르도록 돕습니다. 연기하는 자신감이 아니라, 연습으로 쌓은 자신감을요.</p>
         </sc-if>
         <div style="font-size:11.5px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,0.55)">
-          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>ICF ACC Certified Coach · Five Continents · English &amp; Korean</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>ICF ACC 국제공인코치 · 5개 대륙 · 영어 &amp; 한국어</span></sc-if>
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>ICF ACC Certified Coach · Five Continents · English, Korean &amp; Chinese</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>ICF ACC 국제공인코치 · 5개 대륙 · 영어 · 한국어 · 중국어</span></sc-if>
         </div>
         <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap">
           <a href="#contact" style="text-decoration:none;background:#F3EDE7;color:#483438;padding:16px 32px;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;border-radius:3px;transition:background .25s" style-hover="background:#FFFFFF">
@@ -264,18 +264,18 @@
       <div class="method-grid" style="display:grid;grid-template-columns:minmax(280px,5fr) minmax(0,7fr);gap:40px">
         <div class="sense-list">
           <sc-for list="{{ senses }}" as="s" hint-placeholder-count="5">
-            <div class="sense-option" onClick="{{ s.select }}" style="border-left-color:{{ s.bar }};background:{{ s.bg }}">
-              <div class="sense-option__icon" style="background-image:url({{ s.icon }})"></div>
-              <div style="display:flex;flex-direction:column;gap:2px">
-                <div style="font-size:15px;font-weight:600;color:#483438;letter-spacing:0.3px">{{ s.name }}</div>
-                <div style="font-size:13px;color:#8D8177">{{ s.tag }}</div>
-              </div>
-            </div>
+            <button class="sense-option" type="button" onClick="{{ s.select }}" aria-pressed="{{ s.selected }}" aria-controls="sense-panel" style="border-left-color:{{ s.bar }};background:{{ s.bg }}">
+              <span class="sense-option__icon" aria-hidden="true" style="background-image:url({{ s.icon }})"></span>
+              <span style="display:flex;flex-direction:column;gap:2px">
+                <span style="font-size:15px;font-weight:600;color:#483438;letter-spacing:0.3px">{{ s.name }}</span>
+                <span style="font-size:13px;color:#8D8177">{{ s.tag }}</span>
+              </span>
+            </button>
           </sc-for>
           <div style="border-top:1px solid #E8E0D7"></div>
         </div>
 
-        <div class="sense-panel" style="background:{{ panelTint }}">
+        <div id="sense-panel" class="sense-panel" style="background:{{ panelTint }}">
           <div class="sense-panel__heading">
             <div class="sense-panel__icon-tile" style="background:{{ sInk }}">
               <div class="sense-panel__icon" style="background-image:url({{ sIconWhite }})"></div>
@@ -593,10 +593,10 @@
           <h2 style="margin:0;font-size:clamp(28px,3vw,36px);font-weight:700;color:#483438">대화를 시작해요.</h2>
         </sc-if>
         <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}">
-          <p style="margin:0;font-size:16px;line-height:1.75;color:#4A4441;max-width:440px">No preparation needed. Send me a message on LinkedIn and tell me a little about where you are. A few sentences are enough. We’ll find a time to talk, in English or Korean.</p>
+          <p style="margin:0;font-size:16px;line-height:1.75;color:#4A4441;max-width:440px">No preparation needed. Send me a message on LinkedIn and tell me a little about where you are. A few sentences are enough. We’ll find a time to talk, in English, Korean, or Chinese.</p>
         </sc-if>
         <sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}">
-          <p style="margin:0;font-size:15px;line-height:1.9;color:#4A4441;max-width:440px">준비하지 않으셔도 됩니다. 링크드인 메시지로 지금 어디쯤 있는지 짧게 들려주세요. 몇 문장이면 충분합니다. 영어로든 한국어로든, 함께 이야기할 시간을 찾겠습니다.</p>
+          <p style="margin:0;font-size:15px;line-height:1.9;color:#4A4441;max-width:440px">준비하지 않으셔도 됩니다. 링크드인 메시지로 지금 어디쯤 있는지 짧게 들려주세요. 몇 문장이면 충분합니다. 영어, 한국어, 중국어 중 편한 언어로, 함께 이야기할 시간을 찾겠습니다.</p>
         </sc-if>
         <div style="font-size:13px;color:#8D8177;margin-top:12px">
           <sc-if value="{{ en }}" hint-placeholder-val="{{ true }}"><span>Seoul · online everywhere · replies within two working days</span></sc-if><sc-if value="{{ kr }}" hint-placeholder-val="{{ false }}"><span>서울 · 온라인 어디서든 · 영업일 기준 2일 내 답장</span></sc-if>
@@ -794,6 +794,7 @@ class Component extends DCLogic {
         name: loc.name,
         tag: loc.tag,
         icon: d.icon,
+        selected: isSel ? 'true' : 'false',
         bar: isSel ? d.ink : 'transparent',
         bg: isSel ? d.ink + '10' : 'transparent',
         select: () => this.setState({ sense: d.key })

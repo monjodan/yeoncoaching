@@ -112,6 +112,12 @@ button[type="submit"]:hover {
 }
 
 .sense-option {
+  width: 100%;
+  appearance: none;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
   padding: 18px 22px;
   display: flex;
   align-items: center;

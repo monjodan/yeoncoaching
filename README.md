@@ -1,6 +1,6 @@
 # Yeon Coaching website
 
-Static bilingual website for Yeon Coaching by Rebecca, deployed with GitHub Pages.
+Static English/Korean website for Yeon Coaching by Rebecca, deployed with GitHub Pages. Rebecca offers coaching in English, Korean, and Chinese.
 
 ## Public website
 

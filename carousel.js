@@ -31,7 +31,8 @@
     const previous = carousel.querySelector('[data-testimonial-direction="-1"]');
     const next = carousel.querySelector('[data-testimonial-direction="1"]');
 
-    if (counter) counter.textContent = visible > 1 ? `${start}–${end} / ${cards.length}` : `${start} / ${cards.length}`;
+    const label = visible > 1 ? `${start}–${end} / ${cards.length}` : `${start} / ${cards.length}`;
+    if (counter && counter.textContent !== label) counter.textContent = label;
     if (previous) previous.disabled = false;
     if (next) next.disabled = false;
   };
