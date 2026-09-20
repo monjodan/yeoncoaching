@@ -1,6 +1,6 @@
-# Yeon Studio website
+# Yeon Coaching website
 
-Static bilingual website for Yeon Studio by Rebecca, deployed with GitHub Pages.
+Static bilingual website for Yeon Coaching by Rebecca, deployed with GitHub Pages.
 
 ## Public website
 
